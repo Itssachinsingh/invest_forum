@@ -18,16 +18,18 @@ const Navbar = ({ bgColor = "bg-white", color = "text-black", className }) => {
   return (
     <nav className={`${bgColor} border-b border-b-gray-400 px-4 sm:px-0 lg:mx-28 pt-6 pb-4 ${color} ${className}`}>
       <div className="max-w-8xl mx-auto flex items-center justify-between">
-        
+
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <div className="text-sm font-semibold leading-tight">
-            <h3 className="font-bold text-[16px] sm:text-[18px]">
-              INVEST <br /> PAYMENTS <br /> & BANKING{" "}
-              <span className="font-light">
-                <br /> FORUM
-              </span>
-            </h3>
+            <Link href="/">
+              <h3 className="font-bold text-[16px] sm:text-[18px]">
+                INVEST <br /> PAYMENTS <br /> & BANKING{" "}
+                <span className="font-light">
+                  <br /> FORUM
+                </span>
+              </h3>
+            </Link>
           </div>
         </div>
 
@@ -43,19 +45,19 @@ const Navbar = ({ bgColor = "bg-white", color = "text-black", className }) => {
             </Link>
           ))}
 
-<div className="relative group">
-  <span className="text-sm lg:text-[16px] font-medium text-foreground hover:text-primary transition-colors cursor-pointer">
-    MORE
-  </span>
+          <div className="relative group">
+            <span className="text-sm lg:text-[16px] font-medium text-foreground hover:text-primary transition-colors cursor-pointer">
+              MORE
+            </span>
 
-  {/* Submenu */}
-  <div className="absolute left-0 mt-2 w-32 bg-white text-black shadow-lg rounded-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all">
-    <ul>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Submenu 1</li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Submenu 2</li>
-    </ul>
-  </div>
-</div>        </div>
+            {/* Submenu */}
+            <div className="absolute left-0 mt-2 w-32 bg-white text-black shadow-lg rounded-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all">
+              <ul>
+                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Submenu 1</li>
+                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Submenu 2</li>
+              </ul>
+            </div>
+          </div>        </div>
 
         {/* Desktop Button */}
         <div className="hidden md:block">
@@ -77,11 +79,10 @@ const Navbar = ({ bgColor = "bg-white", color = "text-black", className }) => {
       </div>
 
       {/* Mobile Menu Slide-in */}
-<div
-  className={`fixed top-0 right-0 h-[100vh] text-black w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out md:hidden z-[1000] ${
-    isOpen ? "translate-x-0" : "translate-x-full"
-  }`}
->
+      <div
+        className={`fixed top-0 right-0 h-[100vh] text-black w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out md:hidden z-[1000] ${isOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+      >
         {/* Close Icon inside panel */}
         <div className="flex justify-end p-4">
           <button
@@ -114,12 +115,12 @@ const Navbar = ({ bgColor = "bg-white", color = "text-black", className }) => {
       </div>
 
       {/* Dark overlay when menu is open */}
- {isOpen && (
-  <div
-    className="fixed inset-0 bg-black/50 md:hidden z-[999]"
-    onClick={() => setIsOpen(false)}
-  ></div>
-)}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 md:hidden z-[999]"
+          onClick={() => setIsOpen(false)}
+        ></div>
+      )}
     </nav>
   );
 };
