@@ -50,7 +50,7 @@ export default function Page() {
       </div>
 
       <div className="relative bg-[url('/images/startup.jpg')] bg-cover bg-center h-[30rem]" data-aos="fade-up">
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,_#000000,_#105026,_#187838,_#1C8C42,_#1E9646,_#20A04B)] opacity-80 z-10"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,_#000000,_#105026,_#187838,_#1C8C42,_#1E9646,_#20A04B)] opacity-70 z-10"></div>
         <div className="relative z-10 flex justify-center items-center h-full">
           <h2 className="text-[40px] sm:text-[60px] lg:text-[90px] font-bold text-white mt-[5%]">
             STARTUP

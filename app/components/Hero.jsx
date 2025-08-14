@@ -1,4 +1,6 @@
 import { Button } from "./Button";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Hero = () => {
   return (
@@ -6,13 +8,13 @@ const Hero = () => {
       <div className="mx-auto text-center">
         <div className="font-extrabold leading-tight tracking-tight mb-6 space-y-2 text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[6.8rem]">
           {/* Top line - Left aligned */}
-          <div className="flex justify-start space-x-3 sm:space-x-4">
+          <div className="flex justify-start space-x-3 sm:space-x-4" data-aos="fade-right">
             <span className="text-black">INVEST</span>
             <span className="text-[#E4032A]">PAYMENTS</span>
           </div>
 
           {/* Bottom line - Right aligned */}
-          <div className="flex justify-end space-x-2 sm:space-x-4 mt-[-1rem] sm:mt-[-1.5rem] md:mt-[-2rem]">
+          <div className="flex justify-end space-x-2 sm:space-x-4 mt-[-1rem] sm:mt-[-1.5rem] md:mt-[-2rem]" data-aos="fade-left">
             <span className="text-black text-[1.5rem] sm:text-[2rem] md:text-[3rem] lg:text-[4rem] relative top-[1.4rem] sm:top-[2rem] md:top-[2.4rem] lg:top-[2.8rem]">
               &
             </span>

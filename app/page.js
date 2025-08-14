@@ -5,10 +5,12 @@ import EventImage from "./components/EventImage";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import ScrollingBanner from "./components/ScrollingBanner";
+import TopHeader from "./components/TopHeader";
 
 export default function Home() {
   return (
     <main>
+      <TopHeader/>
       <Navbar />
       <Hero />
       <ScrollingBanner />

@@ -14,7 +14,7 @@ const Content = () => (
       <span key={i} className="flex items-center gap-3">
         {/* ITEM 1 */}
         <FontAwesomeIcon icon={faCalendarDays} className="text-[#E4032A]" />
-        <span className="text-white">JULY 16TH, 2025</span>
+        <span className="text-white">OCTOBER 15TH, 2025</span>
         <FontAwesomeIcon icon={faStarOfLife} className="text-[#FFD109]" />
         <FontAwesomeIcon icon={faLocationDot} className="text-[#FFD109]" />
         <span className="text-white">DUBAI KNOWLEDGE PARK</span>
@@ -22,7 +22,7 @@ const Content = () => (
         {/* ITEM 2 */}
         <FontAwesomeIcon icon={faStarOfLife} className="text-[#FFD109]" />
         <FontAwesomeIcon icon={faCalendarDays} className="text-[#FFD109]" />
-        <span className="text-white">JULY 16TH, 2025</span>
+        <span className="text-white">OCTOBER 15TH, 2025</span>
         <FontAwesomeIcon icon={faStarOfLife} className="text-[#E4032A]" />
         <FontAwesomeIcon icon={faLocationDot} className="text-[#E4032A]" />
         <span className="text-white">DUBAI KNOWLEDGE PARK</span>
@@ -30,7 +30,7 @@ const Content = () => (
         {/* ITEM 3 */}
         <FontAwesomeIcon icon={faStarOfLife} className="text-[#FFD109]" />
         <FontAwesomeIcon icon={faCalendarDays} className="text-[#FFD109]" />
-        <span className="text-white">JULY 16TH, 2025</span>
+        <span className="text-white">OCTOBER 15TH, 2025</span>
         <FontAwesomeIcon icon={faStarOfLife} className="text-[#FFD109]" />
         <FontAwesomeIcon icon={faLocationDot} className="text-[#FFD109]" />
         <span className="text-white">DUBAI KNOWLEDGE PARK</span>

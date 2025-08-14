@@ -1,6 +1,8 @@
 "use client";
 
 import React from 'react'
+import Link from "next/link";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faXTwitter,
@@ -80,11 +82,11 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold mb-3 text-lg lg:text-[22px]">GENERAL</h4>
               <ul className="space-y-2 text-sm lg:text-[15px] leading-snug">
-                <li>AGENDA</li>
-                <li>SPEAKER</li>
-                <li>PARTNER</li>
-                <li>MEDIA</li>
-                <li>EXHIBIT</li>
+                <li>  <Link href='/agenda'>AGENDA</Link></li>
+                <li>  <Link href='/speakers'>SPEAKER</Link></li>
+                <li>  <Link href='/partners'>PARTNER</Link></li>
+                <li>  <Link href='/media'>MEDIA</Link></li>
+                <li>  <Link href='/exhibit'>EXHIBIT</Link></li>
               </ul>
             </div>
 

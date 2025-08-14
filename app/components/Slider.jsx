@@ -17,26 +17,27 @@ const images = [
   "/images/person13.jpg",
   "/images/person14.jpg",
   "/images/person15.jpg",
-
 ];
-
 
 const IMAGE_WIDTH = 300;
 const IMAGE_HEIGHT = 280;
 const BIG_SCALE = 1.2;
 const GAP = 36;
+const INTERVAL = 3000; // 3 seconds
 
 export default function SmoothSnapSlider() {
   const containerRef = useRef(null);
   const scrollLeftRef = useRef(0);
-  const [scrollLeft, setScrollLeft] = useState(0); // used just to trigger re-render on scroll end
+  const [scrollLeft, setScrollLeft] = useState(0);
 
+  const visibleWidth = 4 * IMAGE_WIDTH + 3 * GAP;
+
+  // Manual scroll tracking for scaling
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
     let ticking = false;
-
     const onScroll = () => {
       scrollLeftRef.current = container.scrollLeft;
       if (!ticking) {
@@ -47,51 +48,54 @@ export default function SmoothSnapSlider() {
         ticking = true;
       }
     };
-
     container.addEventListener('scroll', onScroll, { passive: true });
-
-    return () => {
-      container.removeEventListener('scroll', onScroll);
-    };
+    return () => container.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Snap on scroll end debounce
+  // Snap on scroll end
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
     let timeoutId;
-
     const handleScrollEnd = () => {
       const scrollPos = container.scrollLeft;
       const itemSize = IMAGE_WIDTH + GAP;
       const index = Math.round(scrollPos / itemSize);
       const snapPos = index * itemSize;
-
       container.scrollTo({ left: snapPos, behavior: 'smooth' });
-      setScrollLeft(snapPos); // update after snapping
+      setScrollLeft(snapPos);
     };
-
     const onScroll = () => {
       clearTimeout(timeoutId);
       timeoutId = setTimeout(handleScrollEnd, 100);
     };
-
     container.addEventListener('scroll', onScroll);
-
     return () => {
       container.removeEventListener('scroll', onScroll);
       clearTimeout(timeoutId);
     };
   }, []);
 
-  const visibleWidth = 4 * IMAGE_WIDTH + 3 * GAP;
+  // Auto sliding effect
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const itemSize = IMAGE_WIDTH + GAP;
+    let index = 0;
+
+    const intervalId = setInterval(() => {
+      index = (index + 1) % images.length; // loop back
+      container.scrollTo({ left: index * itemSize, behavior: 'smooth' });
+      setScrollLeft(index * itemSize);
+    }, INTERVAL);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
-    <div
-      className="overflow-hidden max-w-[1400px] mx-auto"
-      style={{ height: IMAGE_HEIGHT * BIG_SCALE }}
-    >
+    <div className="overflow-hidden max-w-[1400px] mx-auto" style={{ height: IMAGE_HEIGHT * BIG_SCALE }}>
       <div
         ref={containerRef}
         className="flex items-center gap-6 overflow-x-auto hide-scrollbar py-6 w-full mx-auto"
@@ -105,42 +109,38 @@ export default function SmoothSnapSlider() {
         {images.map((src, i) => {
           const imageLeft = i * (IMAGE_WIDTH + GAP);
           const imageCenter = imageLeft + IMAGE_WIDTH / 2;
-
           const viewportCenter = scrollLeft + visibleWidth / 2;
-
           const distance = Math.abs(viewportCenter - imageCenter);
           const maxDistance = IMAGE_WIDTH + GAP;
-
-          // scale: 1 when far, BIG_SCALE when close
           const ratio = Math.min(distance / maxDistance, 1);
           const scale = BIG_SCALE - (BIG_SCALE - 1) * ratio;
 
           return (
             <div
-      key={i}
-      className="flex-shrink-0"
-      style={{
-        width: `${IMAGE_WIDTH}px`,
-        height: `${IMAGE_HEIGHT}px`,
-        padding: '0 12px', // add horizontal padding for gap buffer
-        boxSizing: 'content-box', // padding outside width/height
-      }}
-    >
-      <img
-        src={src}
-        alt={`Image ${i + 1}`}
-        draggable={false}
-        className="rounded-lg object-cover cursor-pointer transition-transform duration-300 will-change-transform"
-        style={{
-          width: '100%',
-          height: '100%',
-          scrollSnapAlign: 'start',
-          transformOrigin: 'center center',
-          transform: `scale(${scale})`,
-          display: 'block',
-        }}
-      />
-    </div>
+              key={i}
+              className="flex-shrink-0"
+              style={{
+                width: `${IMAGE_WIDTH}px`,
+                height: `${IMAGE_HEIGHT}px`,
+                padding: '0 12px',
+                boxSizing: 'content-box',
+              }}
+            >
+              <img
+                src={src}
+                alt={`Image ${i + 1}`}
+                draggable={false}
+                className="rounded-lg object-cover cursor-pointer transition-transform duration-300 will-change-transform"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  scrollSnapAlign: 'start',
+                  transformOrigin: 'center center',
+                  transform: `scale(${scale})`,
+                  display: 'block',
+                }}
+              />
+            </div>
           );
         })}
       </div>
