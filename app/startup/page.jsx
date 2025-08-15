@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import Navbar from "../components/Navbar";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -43,13 +43,13 @@ export default function Page() {
   return (
 
 
-    <>
+    <div className="max-w-[1600px] mx-auto">
 
       <div className="absolute top-0 left-0 w-full z-[9999]">
         <Navbar bgColor="bg-transparent" color="text-white" />
       </div>
 
-      <div className="relative bg-[url('/images/startup.jpg')] bg-cover bg-center h-[30rem]" data-aos="fade-up">
+      <div className="relative bg-[url('/images/startup.jpg')] bg-cover bg-center h-[30rem]" >
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,_#000000,_#105026,_#187838,_#1C8C42,_#1E9646,_#20A04B)] opacity-70 z-10"></div>
         <div className="relative z-10 flex justify-center items-center h-full">
           <h2 className="text-[40px] sm:text-[60px] lg:text-[90px] font-bold text-white mt-[5%]">
@@ -105,31 +105,34 @@ export default function Page() {
             WHY PITCH ?
           </h2>
         </div>
-        <div className="px-4 sm:px-10 lg:px-24">
+       <div className="px-4 sm:px-10 lg:px-20" data-aos="fade-up">
           <div
-            className="bg-cover bg-center py-10 sm:py-16 h-auto lg:h-[900px]"
+            className="bg-cover bg-center py-16 h-auto lg:h-[700px]"
             style={{ backgroundImage: 'url(/images/world.png)' }}
           >
-            <div className="mx-auto px-4">
-              <div className="flex justify-between md:mx-auto items-center flex-wrap gap-6 sm:gap-12 mb-10 sm:mb-14">
+            <div className="mx-auto px-4 sm:px-4">
+              {/* First Row: 3 boxes */}
+              <div className="flex flex-wrap justify-center gap-4 sm:gap-8 lg:gap-28 mb-10 lg:mb-28" data-aos="fade-right">
                 {boxesTop.map((box, index) => (
                   <div
                     key={index}
-                    className="w-[320px] sm:w-[350px] lg:w-[400px] h-[220px] sm:h-[200px] lg:h-[250px] text-center rounded-xl backdrop-blur-sm backdrop-brightness-50 bg-black/30 text-white flex flex-col items-center justify-center text-lg sm:text-xl font-semibold"
+                    className="w-[280px] sm:w-[300px] lg:w-[360px] h-[180px] sm:h-[200px] lg:h-[220px] text-center rounded-xl backdrop-blur-sm backdrop-brightness-50 bg-black/30 text-white flex flex-col items-center justify-center text-lg sm:text-xl font-semibold"
                   >
-                    <h2 className="text-[48px] sm:text-[60px] lg:text-[80px]">{box.title}</h2>
-                    <p className="text-xs sm:text-sm px-4 sm:px-10">{box.desc}</p>
+                    <h2 className="text-4xl sm:text-5xl lg:text-[80px]">{box.title}</h2>
+                    <p className="text-xs sm:text-sm px-4 sm:px-8 lg:px-12">{box.desc}</p>
                   </div>
                 ))}
               </div>
-              <div className="flex justify-center items-center flex-wrap  gap-12 sm:gap-20 mb-10 sm:mb-14" data-aos="fade-up">
+
+              {/* Second Row: 2 boxes */}
+              <div className="flex flex-wrap justify-center gap-6 sm:gap-8 lg:gap-28" data-aos="fade-left">
                 {boxesBottom.map((box, index) => (
                   <div
                     key={index}
-                    className="w-[320px] sm:w-[350px] lg:w-[400px] h-[220px] sm:h-[200px] lg:h-[250px] text-center rounded-xl backdrop-blur-sm backdrop-brightness-50 bg-black/30 text-white flex flex-col items-center justify-center text-lg sm:text-xl font-semibold"
+                    className="w-[280px] sm:w-[300px] lg:w-[360px] h-[180px] sm:h-[200px] lg:h-[220px] text-center rounded-xl backdrop-blur-sm backdrop-brightness-50 bg-black/30 text-white flex flex-col items-center justify-center text-lg sm:text-xl font-semibold"
                   >
-                    <h2 className="text-[48px] sm:text-[60px] lg:text-[80px]">{box.title}</h2>
-                    <p className="text-xs sm:text-sm px-4 sm:px-10">{box.desc}</p>
+                    <h2 className="text-4xl sm:text-5xl lg:text-[80px]">{box.title}</h2>
+                    <p className="text-xs sm:text-sm px-4 sm:px-8 lg:px-12">{box.desc}</p>
                   </div>
                 ))}
               </div>
@@ -145,7 +148,7 @@ export default function Page() {
             STARTUP PACKAGES
           </h2>
         </div>
-        <div className="flex flex-col lg:flex-row justify-between items-center px-4 sm:px-10 lg:px-24 gap-8 my-20 ">
+        <div className="flex flex-col lg:flex-row justify-between items-center px-4 md:px-20 sm:px-10 lg:px-24 gap-8 my-20 ">
           <div className="lg:w-[55%]">
             <h2 className="text-[28px] sm:text-[40px] lg:text-[52px] font-extrabold">
               With a startup package, your company will gain access to the following:
@@ -169,30 +172,39 @@ export default function Page() {
               Apply for Pitch
             </button>
           </div>
-          <div className="w-full sm:w-auto">
+          <div className="w-full sm:w-auto m-auto px-8 sm:px-0" >
 
 
-            <div className="relative w-52 h-72 cursor-pointer group">
+            <div className="relative w-62 h-82 cursor-pointer group mb-28 lg:mb-0 ">
               {/* Ticket 1 */}
-              <img
+              <Image
                 src="/images/package.png"
                 alt="Ticket 1"
+                loading="lazy"
+                     width={200}   
+                     height={110} 
                 className="absolute top-0 left-0 w-full h-auto transform rotate-[-8deg] transition-all duration-500 ease-out 
                    group-hover:rotate-[-15deg] group-hover:-translate-x-12 group-hover:-translate-y-6"
               />
 
               {/* Ticket 2 */}
-              <img
+              <Image
                 src="/images/package.png"
                 alt="Ticket 2"
+                loading="lazy"
+                     width={200}   
+                     height={110} 
                 className="absolute top-0 left-0 w-full h-auto transform rotate-[0deg] transition-all duration-500 ease-out
                    group-hover:-translate-y-10"
               />
 
               {/* Ticket 3 */}
-              <img
+              <Image
                 src="/images/package.png"
                 alt="Ticket 3"
+                loading="lazy"
+                     width={200}   
+                     height={110} 
                 className="absolute top-0 left-0 w-full h-auto transform rotate-[8deg] transition-all duration-500 ease-out 
                    group-hover:rotate-[15deg] group-hover:translate-x-12 group-hover:-translate-y-6"
               />
@@ -211,6 +223,6 @@ export default function Page() {
       </section>
       {/* footer */}
       <Footer />
-    </>
+    </div>
   );
 }

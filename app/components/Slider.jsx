@@ -1,5 +1,6 @@
 'use client';
 import { useRef, useEffect, useState } from 'react';
+import Image from "next/image";
 
 const images = [
   "/images/person1.jpg",
@@ -126,10 +127,13 @@ export default function SmoothSnapSlider() {
                 boxSizing: 'content-box',
               }}
             >
-              <img
+              <Image
                 src={src}
                 alt={`Image ${i + 1}`}
                 draggable={false}
+                loading="lazy"
+                     width={200}   
+                     height={110} 
                 className="rounded-lg object-cover cursor-pointer transition-transform duration-300 will-change-transform"
                 style={{
                   width: '100%',

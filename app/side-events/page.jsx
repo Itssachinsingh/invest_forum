@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -46,13 +47,13 @@ export default function Page() {
   }, []);
 
   return (
-    <>
+    <div className="w-full max-w-[1600px] mx-auto">
 
       <div className="absolute top-0 left-0 w-full z-[9999]">
         <Navbar bgColor="bg-transparent" color="text-white" />
       </div>
 
-      <div className="relative bg-[url('/images/side.jpg')] bg-cover bg-center h-[30rem]" data-aos="fade-up">
+      <div className="relative bg-[url('/images/side.jpg')] bg-cover bg-center h-[30rem]" >
         <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-[#6F0545] to-[#6F0545] opacity-80 z-10"></div>
         <div className="relative z-10 flex justify-center items-center h-full">
           <h2 className="text-[40px] sm:text-[60px] lg:text-[90px] font-bold text-white mt-[5%]">
@@ -64,7 +65,7 @@ export default function Page() {
 
 
       {/* events */}
-      <div className="space-y-4 px-4 sm:px-6 lg:px-35" data-aos="fade-up">
+      <div className="space-y-4 px-4 sm:px-6 lg:px-25" data-aos="fade-up">
         {events.map((event, idx) => (
           <div
             key={idx}
@@ -81,11 +82,14 @@ export default function Page() {
             </div>
 
             {/* Event Details */}
-            <div className="flex flex-col sm:flex-row px-4 bg-[#FFE2F4] w-full h-auto sm:h-[180px] rounded-lg items-center sm:items-center gap-4 hover:shadow-2xl" data-aos="fade-up">
+            <div className="flex flex-col sm:flex-row px-4 py-2 bg-[#FFE2F4] w-full h-auto sm:h-[180px] rounded-lg items-center sm:items-center gap-4 hover:shadow-2xl" data-aos="fade-up">
               <div className="m-3 flex-shrink-0">
-                <img
+                <Image
                   src={event.image}
                   alt={event.title}
+                  loading="lazy"
+                       width={100}   
+                     height={100} 
                   className="w-[100px] sm:w-[120px] h-[100px] sm:h-[120px] object-cover rounded-lg"
                 />
               </div>
@@ -106,7 +110,7 @@ export default function Page() {
                   </div>
                 </div>
 
-                <div className="mt-4 sm:mt-0 pr-0 sm:pr-6">
+                <div className="mt-4 sm:mt-0 pr-0 sm:pr-6 ">
                   <AddToCalendarButton
                     title={event.title}
                     month={event.month}
@@ -128,6 +132,6 @@ export default function Page() {
 
       {/* footer */}
       <Footer />
-    </>
+    </div>
   );
 }

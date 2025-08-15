@@ -130,7 +130,7 @@ body {
 
 .animate-marquee-right {
   display: flex;
-  animation: marquee-right 30s linear infinite;
+  animation: marquee-right 10s linear infinite;
 }
 
 

@@ -38,7 +38,7 @@ const Footer = () => {
         className="
           bg-indigo-500 rounded-xl py-12 px-16
           flex flex-col md:flex-row items-center justify-between gap-12
-          mx-4 sm:mx-10 md:mx-35 
+          mx-4 sm:mx-10 md:mx-10 
           my-12
         "  data-aos="fade-up"
       >
@@ -69,7 +69,7 @@ const Footer = () => {
 
       <footer className="bg-gray-900 text-white py-12 px-4 sm:px-10 lg:px-35"  data-aos="fade-up">
         <div className="mx-auto">
-          <div className="grid md:grid-cols-6 gap-8">
+          <div className="grid lg:grid-cols-6 gap-8">
             {/* Logo + Info */}
             <div className="col-span-2">
               <h3 className="font-bold mb-4 text-2xl lg:text-[33px] w-full lg:w-[45%] leading-tight">

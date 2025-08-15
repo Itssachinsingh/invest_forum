@@ -16,7 +16,7 @@ const Navbar = ({ bgColor = "bg-white", color = "text-black", className }) => {
   ];
 
   return (
-    <nav className={`${bgColor} border-b border-b-gray-400 px-4 sm:px-0 lg:mx-28 pt-6 pb-4 ${color} ${className}`}>
+    <nav className={`${bgColor} border-b border-b-gray-400 px-4 sm:px-2 lg:mx-28 pt-6 pb-4  max-w-[1600px] mx-auto  ${color} ${className}`}>
       <div className="max-w-8xl mx-auto flex items-center justify-between">
 
         {/* Logo */}
@@ -34,7 +34,7 @@ const Navbar = ({ bgColor = "bg-white", color = "text-black", className }) => {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8 lg:space-x-12">
+        <div className="hidden lg:flex items-center space-x-8 lg:space-x-12">
           {navItems.map((item) => (
             <Link
               key={item.label}
@@ -53,21 +53,21 @@ const Navbar = ({ bgColor = "bg-white", color = "text-black", className }) => {
             {/* Submenu */}
             <div className="absolute left-0 mt-2 w-32 bg-white text-black shadow-lg rounded-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all">
               <ul>
-                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Submenu 1</li>
-                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Submenu 2</li>
+                <Link href='/contact'><li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">CONTACT</li></Link>
+                <Link href='/blogs'><li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">BLOGS</li></Link>
               </ul>
             </div>
           </div>        </div>
 
         {/* Desktop Button */}
-        <div className="hidden md:block">
+        <div className="hidden lg:block ">
           <button className="bg-[#E4032A] text-white text-[14px] lg:text-[16px] px-6 lg:px-8 py-2.5 lg:py-3 rounded-4xl duration-500 ease-in-out hover:bg-gradient-to-r hover:from-[#d4145a] hover:to-[#004e92]">
             Register Now
           </button>
         </div>
 
         {/* Mobile Hamburger / Close */}
-        <div className="md:hidden flex items-center">
+        <div className="lg:hidden flex items-center">
           <button
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"

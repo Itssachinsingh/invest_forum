@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,131 +15,11 @@ import 'aos/dist/aos.css';
 
 export default function Page() {
 
-// const speakers = [
-//   { name: "adam", title: "", image: "/images/pastspeaker/adam.png" },
-//   { name: "aishwrya", title: "", image: "/images/pastspeaker/aishwrya.png" },
-//   { name: "ajeet", title: "", image: "/images/pastspeaker/ajeet.png" },
-//   { name: "alex", title: "", image: "/images/pastspeaker/alex.png" },
-//   { name: "allen", title: "", image: "/images/pastspeaker/allen.png" },
-//   { name: "amar", title: "", image: "/images/pastspeaker/amar.png" },
-//   { name: "amit", title: "", image: "/images/pastspeaker/amit.png" },
-//   { name: "amitp", title: "", image: "/images/pastspeaker/amitp.png" },
-//   { name: "amitraj", title: "", image: "/images/pastspeaker/amitraj.png" },
-//   { name: "amitsaluja", title: "", image: "/images/pastspeaker/amitsaluja.png" },
-//   { name: "amitthaker", title: "", image: "/images/pastspeaker/amitthaker.png" },
-//   { name: "anchit", title: "", image: "/images/pastspeaker/anchit.png" },
-//   { name: "anuj", title: "", image: "/images/pastspeaker/anuj.png" },
-//   { name: "anupam", title: "", image: "/images/pastspeaker/anupam.png" },
-//   { name: "anurag", title: "", image: "/images/pastspeaker/anurag.png" },
-//   { name: "arvind", title: "", image: "/images/pastspeaker/arvind.png" },
-//   { name: "ashima", title: "", image: "/images/pastspeaker/ashima.png" },
-//   { name: "ashish", title: "", image: "/images/pastspeaker/ashish.png" },
-//   { name: "ashishsin", title: "", image: "/images/pastspeaker/ashishsin.png" },
-//   { name: "ashok", title: "", image: "/images/pastspeaker/ashok.png" },
-//   { name: "auther", title: "", image: "/images/pastspeaker/aurther.png" },
-//   { name: "bibin", title: "", image: "/images/pastspeaker/bibin.png" },
-//   { name: "bilai", title: "", image: "/images/pastspeaker/bilai.png" },
-//   { name: "biplap", title: "", image: "/images/pastspeaker/biplap.png" },
-//   { name: "brenton", title: "", image: "/images/pastspeaker/brenton.png" },
-//   { name: "brian", title: "", image: "/images/pastspeaker/brian.png" },
-//   { name: "chandrasheker", title: "", image: "/images/pastspeaker/chandrasheker.png" },
-//   { name: "charles", title: "", image: "/images/pastspeaker/charles.png" },
-//   { name: "chirag", title: "", image: "/images/pastspeaker/chirag.png" },
-//   { name: "chiragmeh", title: "", image: "/images/pastspeaker/chiragmeh.png" },
-//   { name: "dariia", title: "", image: "/images/pastspeaker/dariia.png" },
-//   { name: "dennis", title: "", image: "/images/pastspeaker/dennis.png" },
-//   { name: "devid", title: "", image: "/images/pastspeaker/devid.png" },
-//   { name: "devika", title: "", image: "/images/pastspeaker/devika.png" },
-//   { name: "dhanraj", title: "", image: "/images/pastspeaker/dhanraj.png" },
-//   { name: "diksha", title: "", image: "/images/pastspeaker/diksha.png" },
-//   { name: "dileep", title: "", image: "/images/pastspeaker/dileep.png" },
-//   { name: "dilip", title: "", image: "/images/pastspeaker/dilip.png" },
-//   { name: "dinesh", title: "", image: "/images/pastspeaker/dinesh.png" },
-//   { name: "dirik", title: "", image: "/images/pastspeaker/dirik.png" },
-//   { name: "drsatya", title: "", image: "/images/pastspeaker/drsatya.png" },
-//   { name: "ernesto", title: "", image: "/images/pastspeaker/ernesto.png" },
-//   { name: "evan", title: "", image: "/images/pastspeaker/evan.png" },
-//   { name: "garimasingh", title: "", image: "/images/pastspeaker/garimasingh.png" },
-//   { name: "golok", title: "", image: "/images/pastspeaker/golok.png" },
-//   { name: "habeeb", title: "", image: "/images/pastspeaker/habeeb.png" },
-//   { name: "indrajeet", title: "", image: "/images/pastspeaker/indrajeet.png" },
-//   { name: "irene", title: "", image: "/images/pastspeaker/irene.png" },
-//   { name: "ishan", title: "", image: "/images/pastspeaker/ishan.png" },
-//   { name: "ivan", title: "", image: "/images/pastspeaker/ivan.png" },
-//   { name: "ivani", title: "", image: "/images/pastspeaker/ivani.png" },
-//   { name: "jake", title: "", image: "/images/pastspeaker/jake.png" },
-//   { name: "jimi", title: "", image: "/images/pastspeaker/jimi.png" },
-//   { name: "joseph", title: "", image: "/images/pastspeaker/joseph.png" },
-//   { name: "josh", title: "", image: "/images/pastspeaker/josh.png" },
-//   { name: "kalyanjit", title: "", image: "/images/pastspeaker/kalyanjit.png" },
-//   { name: "kamlesh", title: "", image: "/images/pastspeaker/kamlesh.png" },
-//   { name: "karan", title: "", image: "/images/pastspeaker/karan.png" },
-//   { name: "karthik", title: "", image: "/images/pastspeaker/karthik.png" },
-//   { name: "karthiki", title: "", image: "/images/pastspeaker/karthiki.png" },
-//   { name: "kiran", title: "", image: "/images/pastspeaker/kiran.png" },
-//   { name: "kseniia", title: "", image: "/images/pastspeaker/kseniia.png" },
-//   { name: "laura", title: "", image: "/images/pastspeaker/laura.png" },
-//   { name: "maya", title: "", image: "/images/pastspeaker/maya.png" },
-//   { name: "mayai", title: "", image: "/images/pastspeaker/mayai.png" },
-//   { name: "mehul", title: "", image: "/images/pastspeaker/mehul.png" },
-//   { name: "miko", title: "", image: "/images/pastspeaker/miko.png" },
-//   { name: "milapsingh", title: "", image: "/images/pastspeaker/milapsingh.png" },
-//   { name: "mohammad", title: "", image: "/images/pastspeaker/mohammad.png" },
-//   { name: "mrkp", title: "", image: "/images/pastspeaker/mrkp.png" },
-//   { name: "nagranjan", title: "", image: "/images/pastspeaker/nagranjan.png" },
-//   { name: "naina", title: "", image: "/images/pastspeaker/naina.png" },
-//   { name: "nawal", title: "", image: "/images/pastspeaker/nawal.png" },
-//   { name: "neha", title: "", image: "/images/pastspeaker/neha.png" },
-//   { name: "nitin", title: "", image: "/images/pastspeaker/nitin.png" },
-//   { name: "paula", title: "", image: "/images/pastspeaker/paula.png" },
-//   { name: "pramod", title: "", image: "/images/pastspeaker/pramod.png" },
-//   { name: "pranav", title: "", image: "/images/pastspeaker/pranav.png" },
-//   { name: "prasanna", title: "", image: "/images/pastspeaker/prasanna.png" },
-//   { name: "praveen", title: "", image: "/images/pastspeaker/praveen.png" },
-//   { name: "rachel", title: "", image: "/images/pastspeaker/rachel.png" },
-//   { name: "rahul", title: "", image: "/images/pastspeaker/rahul.png" },
-//   { name: "rajat", title: "", image: "/images/pastspeaker/rajat.png" },
-//   { name: "rajatojha", title: "", image: "/images/pastspeaker/rajatojha.png" },
-//   { name: "rajesh", title: "", image: "/images/pastspeaker/rajesh.png" },
-//   { name: "rajkap", title: "", image: "/images/pastspeaker/rajkap.png" },
-//   { name: "ramarao", title: "", image: "/images/pastspeaker/ramarao.png" },
-//   { name: "reni", title: "", image: "/images/pastspeaker/reni.png" },
-//   { name: "robert", title: "", image: "/images/pastspeaker/robert.png" },
-//   { name: "rohit", title: "", image: "/images/pastspeaker/rohit.png" },
-//   { name: "ross", title: "", image: "/images/pastspeaker/ross.png" },
-//   { name: "sabest", title: "", image: "/images/pastspeaker/sabest.png" },
-//   { name: "sachin", title: "", image: "/images/pastspeaker/sachin.png" },
-//   { name: "sagar", title: "", image: "/images/pastspeaker/sagar.png" },
-//   { name: "sandeep", title: "", image: "/images/pastspeaker/sandeep.png" },
-//   { name: "sandeepsuk", title: "", image: "/images/pastspeaker/sandeepsuk.png" },
-//   { name: "sashi", title: "", image: "/images/pastspeaker/sashi.png" },
-//   { name: "satish", title: "", image: "/images/pastspeaker/satish.png" },
-//   { name: "saurabh", title: "", image: "/images/pastspeaker/saurabh.png" },
-//   { name: "senthil", title: "", image: "/images/pastspeaker/senthil.png" },
-//   { name: "shanker", title: "", image: "/images/pastspeaker/shanker.png" },
-//   { name: "sid", title: "", image: "/images/pastspeaker/sid.png" },
-//   { name: "sohanlal", title: "", image: "/images/pastspeaker/sohanlal.png" },
-//   { name: "sonny", title: "", image: "/images/pastspeaker/sonny.png" },
-//   { name: "srini", title: "", image: "/images/pastspeaker/srini.png" },
-//   { name: "srinivas", title: "", image: "/images/pastspeaker/srinivas.png" },
-//   { name: "sukriti", title: "", image: "/images/pastspeaker/sukriti.png" },
-//   { name: "sunil", title: "", image: "/images/pastspeaker/sunil.png" },
-//   { name: "sunilr", title: "", image: "/images/pastspeaker/sunilr.png" },
-//   { name: "sunilsharma", title: "", image: "/images/pastspeaker/sunilsharma.png" },
-//   { name: "suresh", title: "", image: "/images/pastspeaker/suresh.png" },
-//   { name: "suryakant", title: "", image: "/images/pastspeaker/suryakant.png" },
-//   { name: "tashish", title: "", image: "/images/pastspeaker/tashish.png" },
-//   { name: "tomasz", title: "", image: "/images/pastspeaker/tomasz.png" },
-//   { name: "vikashvaivab", title: "", image: "/images/pastspeaker/vikashvaivab.png" },
-//   { name: "vikram", title: "", image: "/images/pastspeaker/vikram.png" },
-//   { name: "vinod", title: "", image: "/images/pastspeaker/vinod.png" },
-//   { name: "yil", title: "", image: "/images/pastspeaker/yil.png" }
-// ];
 const speakers = [
   {
     name: "Evan Luthra",
     title: "General Partner, KOL Capital",
-    image: "/images/pastspeaker/evan.png",
+    image: "/images/speaker/evan.png",
   },
   {
     name: "Cláudia Pinto",
@@ -1661,13 +1542,13 @@ const speakers = [
   }, []);
 
   return (
-<>
+<div className="w-full max-w-[1600px] mx-auto">
 
     <div className="absolute top-0 left-0 w-full z-[9999]">
         <Navbar bgColor="bg-transparent" color="text-white" />
     </div>
 
-    <div className="relative bg-[url('/images/speaker.jpg')] bg-cover bg-center h-[30rem]" data-aos="fade-up">
+    <div className="relative bg-[url('/images/speaker.jpg')] bg-cover bg-center h-[30rem]" >
 <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-red-600/60 to-[#8d0d24]/70"></div>
         <div className="relative z-10 flex justify-center items-center h-full">
            <h2 className="text-[40px] sm:text-[60px] lg:text-[90px] font-bold text-white mt-[5%]">
@@ -1704,9 +1585,12 @@ const speakers = [
                   key={index}
                   className="w-[300px] h-[340px] flex-shrink-0 relative overflow-hidden rounded-lg"
                 >
-                  <img
+                  <Image
                     src={speaker.image}
                     alt={speaker.name}
+                    loading="lazy"
+                         width={150}   
+                     height={110} 
                     className="w-full h-full object-cover hover:scale-120 transition duration-300 ease-in-out"
                   />
                   <div className="absolute bottom-2 right-2 left-2  w-[95%] bg-black/70 py-8 px-4 rounded-lg hover:border-2">
@@ -1725,6 +1609,6 @@ const speakers = [
 
       {/* footer */}
       <Footer />
-    </>
+    </div>
   );
 }

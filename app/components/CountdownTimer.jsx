@@ -34,31 +34,31 @@ const CountdownTimer = () => {
         
         {/* Days */}
         <div className="text-center">
-          <div className="text-[48px] md:text-[68px] font-bold">{timeLeft.days}</div>
+          <div className="text-[24px] md:text-[40px] xl:text-[68px] font-bold">{timeLeft.days}</div>
           <div className="text-lg md:text-[28px] font-medium uppercase tracking-wider">Days</div>
         </div>
 
-        <div className="text-[48px] md:text-[68px] font-bold">:</div>
+        <div className="text-[24px] md:text-[40px] xl:text-[68px] font-bold">:</div>
 
         {/* Hours */}
         <div className="text-center">
-          <div className="text-[48px] md:text-[68px] font-bold">{timeLeft.hours}</div>
+          <div className="text-[24px] md:text-[40px] xl:text-[68px] font-bold">{timeLeft.hours}</div>
           <div className="text-lg md:text-[28px] font-medium uppercase tracking-wider">Hrs</div>
         </div>
 
-        <div className="text-[48px] md:text-[68px] font-bold">:</div>
+        <div className="text-[24px] md:text-[40px] xl:text-[68px] font-bold">:</div>
 
         {/* Minutes */}
         <div className="text-center">
-          <div className="text-[48px] md:text-[68px] font-bold">{timeLeft.minutes}</div>
+          <div className="text-[24px] md:text-[40px] xl:text-[68px] font-bold">{timeLeft.minutes}</div>
           <div className="text-lg md:text-[28px] font-medium uppercase tracking-wider">Mns</div>
         </div>
 
-        <div className="text-[48px] md:text-[68px] font-bold">:</div>
+        <div className="text-[24px] md:text-[40px] xl:text-[68px] font-bold">:</div>
 
         {/* Seconds */}
         <div className="text-center">
-          <div className="text-[48px] md:text-[68px] font-bold">{timeLeft.seconds}</div>
+          <div className="text-[24px] md:text-[40px] xl:text-[68px] font-bold">{timeLeft.seconds}</div>
           <div className="text-lg md:text-[28px] font-medium uppercase tracking-wider">Secs</div>
         </div>
 

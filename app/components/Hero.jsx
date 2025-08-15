@@ -23,11 +23,11 @@ const Hero = () => {
           </div>
         </div>
 
-        <h3 className="text-[1.25rem] sm:text-[1.75rem] md:text-[2.5rem] lg:text-[2.625rem] font-bold my-6 sm:my-8 text-muted-foreground">
+        <h3 className="text-[1.25rem] sm:text-[1.75rem] md:text-[2.5rem] lg:text-[2.625rem] font-bold my-6 sm:my-8 text-muted-foreground"  data-aos="fade-left">
           Driving financial Inclusion forward
         </h3>
 
-        <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-6 text-white">
+        <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-6 text-white"  data-aos="fade-up">
           <Button color="bg-[#E4032A]" text="Register Now" />
           <Button color="bg-[#109FEB]" text="Become Partner" />
         </div>

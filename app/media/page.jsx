@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -38,11 +39,11 @@ export default function Page() {
     }, []);
 
     return (
-        <>
+        <div className="w-full max-w-[1600px] mx-auto">
             <div className="absolute top-0 left-0 w-full z-[9999]">
                 <Navbar bgColor="bg-transparent" color="text-white" />
             </div>
-            <div className="relative bg-[url('/images/media.png')] bg-cover bg-center h-[30rem]" data-aos="fade-up">
+            <div className="relative bg-[url('/images/media.png')] bg-cover bg-center h-[30rem]" >
                 <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-[#01B2AA] to-[#01B2AA] opacity-80 z-10"></div>
                 <div className="relative z-10 flex justify-center items-center h-full">
                     <h2 className="text-[40px] sm:text-[60px] lg:text-[90px] font-bold text-white mt-[5%]">
@@ -63,7 +64,7 @@ export default function Page() {
                 <p className="text-[16px] sm:text-[20px]">
                     Apply for a complimentary Media Pass to join us at Invest Payments & Banking Forum, 16th July 2025, at Dubai Knowledge hub.
                 </p>
-                <Button color="bg-[#01B2AA]" text="Become Media Partner" />
+                <Button color="bg-[#01B2AA]" text="Become Media Partner" data-aos="fade-bottom" />
             </div>
 
 
@@ -74,19 +75,19 @@ export default function Page() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center py-8 mb-20">
                     {/* Website Visits */}
-                    <div>
+                    <div data-aos="fade-right">
                         <p className="text-[64px] font-bold text-red-600">1.6M</p>
                         <p className="text-[24px] font-bold tracking-wide">WEBSITE VISITS</p>
                     </div>
 
                     {/* Unique Engagers */}
-                    <div>
+                    <div data-aos="fade-up">
                         <p className="text-[64px] font-bold text-blue-700">2.4K</p>
                         <p className="text-[24px] font-bold tracking-wide">UNIQUE ENGAGERS</p>
                     </div>
 
                     {/* Social Shares */}
-                    <div>
+                    <div data-aos="fade-left">
                         <p className="text-[64px] font-bold text-green-600">84.9K</p>
                         <p className="text-[24px] font-bold tracking-wide">SOCIAL SHARES</p>
                     </div>
@@ -100,7 +101,7 @@ export default function Page() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-20 text-center lg:text-left px-20 pt-18 pb-25" data-aos="fade-up">
                     {/* Professional Standing */}
-                    <div className="flex flex-col items-center lg:items-start ">
+                    <div className="flex flex-col items-center lg:items-start " data-aos="fade-right">
                         <FontAwesomeIcon icon={faUserTie} className="text-[53px]  text-teal-500 mb-4" />
                         <h2 className="text-[32px]  mb-2 font-bold">Professional Standing</h2>
                         <p className="text-[18px] text-gray-600">
@@ -110,7 +111,7 @@ export default function Page() {
                     </div>
 
                     {/* Content Relevance */}
-                    <div className="flex flex-col items-center lg:items-start">
+                    <div className="flex flex-col items-center lg:items-start" data-aos="fade-right">
                         <FontAwesomeIcon icon={faCamera} className="text-[53px]  text-teal-500 mb-4" />
                         <h2 className="text-[32px] mb-2  font-bold">Content Relevance</h2>
                         <p className="text-[18px] text-gray-600">
@@ -119,7 +120,7 @@ export default function Page() {
                     </div>
 
                     {/* Previous Coverage */}
-                    <div className="flex flex-col items-center lg:items-start">
+                    <div className="flex flex-col items-center lg:items-start" data-aos="fade-left">
                         <FontAwesomeIcon icon={faClockRotateLeft} className="text-[53px]  text-teal-500 mb-4" />
                         <h2 className="text-[32px] mb-2  font-bold">Previous Coverage</h2>
                         <p className="text-[18px] text-gray-600">
@@ -128,7 +129,7 @@ export default function Page() {
                     </div>
 
                     {/* Publication Reach */}
-                    <div className="flex flex-col items-center lg:items-start">
+                    <div className="flex flex-col items-center lg:items-start" data-aos="fade-left">
                         <FontAwesomeIcon icon={faBullhorn} className="text-[53px]  text-teal-500 mb-4" />
                         <h2 className="text-[32px] mb-2  font-bold">Publication Reach</h2>
                         <p className="text-[18px] text-gray-600">
@@ -153,9 +154,12 @@ export default function Page() {
                         <div className="overflow-hidden whitespace-nowrap my-16">
                             <div className="animate-marquee-left">
                                 {[...partners1, ...partners1,].map((logo, index) => (
-                                    <img
+                                    <Image
                                         key={index}
                                         src={logo}
+                                        loading="lazy"
+                                        width={400}
+                                        height={110}
                                         alt={`Partner ${index + 1}`}
                                         className="h-14 bg-white/10 mx-10"
                                     />
@@ -183,42 +187,42 @@ export default function Page() {
                             {/* Name & Email */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-20 ">
                                 <div>
-                                    <label className="block text-[18px] font-bold">Full Name</label>
-                                    <input type="text" className="w-full border-b border-white outline-none" />
+                                    <label className="block text-[18px] font-bold" data-aos="fade-right">Full Name</label>
+                                    <input type="text" className="w-full border-b border-white outline-none" data-aos="fade-right"/>
                                 </div>
                                 <div>
-                                    <label className="block text-[18px] font-bold">Designation</label>
-                                    <input type="text" className="w-full border-b border-white outline-none" />
+                                    <label className="block text-[18px] font-bold" data-aos="fade-left">Designation</label>
+                                    <input type="text" className="w-full border-b border-white outline-none" data-aos="fade-left"/>
                                 </div>
                             </div>
 
                             {/* Contact & Telegram */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-20 ">
                                 <div>
-                                    <label className="block text-[18px] font-bold">Organisation</label>
-                                    <input type="text" className="w-full border-b border-white outline-none" />
+                                    <label className="block text-[18px] font-bold" data-aos="fade-right">Organisation</label>
+                                    <input type="text" className="w-full border-b border-white outline-none"  data-aos="fade-right"/>
                                 </div>
                                 <div>
-                                    <label className="block text-[18px] font-bold">Email</label>
-                                    <input type="email" className="w-full border-b border-white outline-none" />
+                                    <label className="block text-[18px] font-bold" data-aos="fade-left">Email</label>
+                                    <input type="email" className="w-full border-b border-white outline-none" data-aos="fade-left"/>
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-20 ">
                                 <div>
-                                    <label className="block text-[18px] font-bold">Contact No. (WhatsApp Preferred)</label>
-                                    <input type="text" className="w-full border-b border-white outline-none" />
+                                    <label className="block text-[18px] font-bold" data-aos="fade-right">Contact No. (WhatsApp Preferred)</label>
+                                    <input type="text" className="w-full border-b border-white outline-none" data-aos="fade-right" />
                                 </div>
                                 <div>
-                                    <label className="block text-[18px] font-bold">Telegram</label>
-                                    <input type="text" className="w-full border-b border-white outline-none" />
+                                    <label className="block text-[18px] font-bold" data-aos="fade-left">Telegram</label>
+                                    <input type="text" className="w-full border-b border-white outline-none" data-aos="fade-left" />
                                 </div>
                             </div>
                             {/* Message & Submit */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
                                 <div>
-                                    <label className="block text-[18px] font-bold">Country</label>
-                                    <input type="text" className="w-full border-b border-white  outline-none" />
+                                    <label className="block text-[18px] font-bold" data-aos="fade-right">Country</label>
+                                    <input type="text" className="w-full border-b border-white  outline-none" data-aos="fade-right" />
                                 </div>
                                 <div className="mt-[-2rem] md:mt-0">
                                     <Button color="bg-[#E4032A]" text="Submit Application" />
@@ -229,7 +233,8 @@ export default function Page() {
 
                     {/* Right side - Partner Queries */}
                     <div className="rounded-xl text-white font-semibold w-full lg:w-[30%] mt-10 lg:mt-0" data-aos="fade-up">
-                        <img src="/images/media_pass.png" alt="" className="mt-8" />
+                        <Image src="/images/media_pass.png" alt="" loading="lazy" width={270}
+                            height={150} className="mt-8" />
                     </div>
                 </div>
 
@@ -237,6 +242,6 @@ export default function Page() {
 
             {/* footer */}
             <Footer />
-        </>
+        </div>
     );
 }

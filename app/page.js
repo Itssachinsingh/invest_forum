@@ -1,6 +1,5 @@
 import Main from "./components/Main";
 import BottomBanner from "./components/BottomBanner";
-import CountdownTimer from "./components/CountdownTimer";
 import EventImage from "./components/EventImage";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
@@ -9,7 +8,7 @@ import TopHeader from "./components/TopHeader";
 
 export default function Home() {
   return (
-    <main>
+    <main className="w-full max-w-[1600px] mx-auto">
       <TopHeader/>
       <Navbar />
       <Hero />

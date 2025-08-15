@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -143,13 +144,13 @@ export default function Page() {
     }, []);
 
     return (
-        <>
+        <div className="w-full max-w-[1600px] mx-auto">
         
     <div className="absolute top-0 left-0 w-full z-[9999]">
         <Navbar bgColor="bg-transparent" color="text-white" />
     </div>
 
-    <div className="relative bg-[url('/images/partners.jpg')] bg-cover bg-center h-[30rem]" data-aos="fade-up">
+    <div className="relative bg-[url('/images/partners.jpg')] bg-cover bg-center h-[30rem]" >
         <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-purple-600/50 to-[#796DFF]"></div>
         <div className="relative z-10 flex justify-center items-center h-full">
             <h2 className="text-[40px] sm:text-[60px] lg:text-[90px] font-bold text-white mt-[5%]">
@@ -159,20 +160,24 @@ export default function Page() {
     </div>
 
             <section className=" py-14 -mt-[80px] " data-aos="fade-up">
-                <div className=" mx-auto">
+                <div className=" mx-auto" data-aos="fade-right"> 
                     <div className=" flex flex-col  sm:flex-row gap-20   items-center lg:px-[7rem] py-[4rem]">
                         <div className="flex flex-wrap justify-center md:justify-between gap-4 w-full max-w-[564px] mx-auto md:mx-0">
-                            <img src="./images/exhibit1.jpg" alt="Exhibit 1"
+                            <Image src="/images/exhibit1.jpg" alt="Exhibit 1" loading="lazy"      width={200}   
+                     height={110} 
                                 className="w-[80%] sm:w-[48%] md:w-[300px] h-[180px] md:h-[220px] object-cover rounded" />
-                            <img src="./images/exhibit2.jpg" alt="Exhibit 2"
+                            <Image src="/images/exhibit2.jpg" alt="Exhibit 2" loading="lazy"      width={200}   
+                     height={110} 
                                 className="w-[80%] sm:w-[48%] md:w-[240px] h-[180px] md:h-[220px] object-cover rounded" />
-                            <img src="./images/exhibit3.jpg" alt="Exhibit 3"
+                            <Image src="/images/exhibit3.jpg" alt="Exhibit 3" loading="lazy"      width={200}   
+                     height={110} 
                                 className="w-[80%] sm:w-[48%] md:w-[240px] h-[180px] md:h-[220px] object-cover rounded" />
-                            <img src="./images/exhibit4.jpg" alt="Exhibit 4"
+                            <Image src="/images/exhibit4.jpg" alt="Exhibit 4" loading="lazy"      width={200}   
+                     height={110} 
                                 className="w-[80%] sm:w-[48%] md:w-[300px] h-[180px] md:h-[220px] object-cover rounded" />
                         </div>
 
-                        <div className="space-y-4 sm:w-[700px]" data-aos="fade-up">
+                        <div className="space-y-4 sm:w-[700px]"  data-aos="fade-left">
                             <p className="text-[20px] mt-8 px-8 sm:px-4">
                                 Partner with the Invest Payments and Banking Forum and put your brand front and center in the world of finance and fintech innovation. Connect with industry leaders, regulators, and game-changers, and be part of the conversation that’s shaping the future of payments and banking. Let’s work together to create something impactful!
                             </p>
@@ -194,7 +199,7 @@ export default function Page() {
                 </div>
             </section>
 
-            <section className="bg-event-red py-20">
+            <section className="bg-event-red py-20" data-aos="fade-up">
                 <div className="mx-auto">
                     <div className="text-center mb-12 bg-[#E4032A]">
                         <h2 className="text-4xl font-bold text-white mb-4 lg:text-7xl py-4">
@@ -203,15 +208,18 @@ export default function Page() {
                     </div>
 
                     <div className="w-full mx-auto py-20">
-                        <div className="flex flex-wrap gap-6 px-4 justify-center">
+                        <div className="flex flex-wrap gap-6 px-4 justify-center" >
                             {partners.map((partner, index) => (
                                 <div
                                     key={index}
-                                    className="h-[250px] w-[250px] flex items-center justify-center border border-gray rounded-lg bg-gray-300"
+                                    className="h-[250px] w-[250px] flex items-center justify-center border border-gray rounded-lg bg-gray-300" data-aos="fade-up"
                                 >
-                                    <img
+                                    <Image
                                         src={partner.src}
                                         alt={partner.name}
+                                        loading="lazy"
+                                        width={200}
+                                        height={150}
                                         className="max-h-full max-w-full object-contain"
                                     />
                                 </div>
@@ -227,6 +235,6 @@ export default function Page() {
 
             {/* footer */}
             <Footer />
-        </>
+        </div>
     );
 }

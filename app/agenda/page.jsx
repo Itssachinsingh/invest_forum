@@ -127,15 +127,15 @@ export default function ScheduleTabs() {
 
 
   return (
-    <>
+    <div className='w-full max-w-[1600px] mx-auto relative'>
 
 
 
-      <div className="absolute top-0 left-0 w-full z-[9999]">
+      <div className="absolute top-0 left-0 w-full z-[9999] mx-auto" >
         <Navbar bgColor="bg-transparent" color="text-white" />
       </div>
 
-      <div className="relative bg-[url('/images/banner.jpg')] bg-cover bg-center h-[30rem]" data-aos="fade-up">
+      <div className="relative bg-[url('/images/banner.jpg')] bg-cover bg-center h-[30rem]" >
         <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-blue-600/50 to-[#005CA1]"></div>
         <div className="relative z-10 flex justify-center items-center h-full">
           <h2 className=" text-[60px] md:text-[90px] font-bold text-white mt-[5%]" >Agenda</h2>
@@ -192,20 +192,6 @@ export default function ScheduleTabs() {
                     <div className="flex flex-col sm:flex-row justify-between items-start gap-4">
                       <div>
                         <span className="font-semibold">{item.title}</span>
-
-                        {/* {item.speaker?.img && (
-                          <div className="flex items-center space-x-4 my-4 sm:my-8">
-                            <img
-                              src={item.speaker.img}
-                              alt={item.speaker.name}
-                              className="w-12 h-12 sm:w-20 sm:h-20 rounded-lg object-cover"
-                            />
-                            <div className="text-black">
-                              <h4 className="text-lg sm:text-[20px] font-bold">Robert Downy</h4>
-                              <p className="text-sm sm:text-[16px]">Founder, Stack industries</p>
-                            </div>
-                          </div>
-                        )} */}
                       </div>
 
                       <span className="shrink-0 w-auto px-3 py-1 rounded-full  font-semibold tracking-wide uppercase border border-gray-400 text-sm sm:text-[18px]">
@@ -223,6 +209,6 @@ export default function ScheduleTabs() {
 
 
       <Footer />
-    </>
+    </div>
   );
 }

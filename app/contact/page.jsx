@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -31,7 +32,7 @@ export default function Page() {
 
 
     return (
-        <>
+        <div className="w-full max-w-[1600px] mx-auto">
 
 
 
@@ -39,7 +40,7 @@ export default function Page() {
                 <Navbar bgColor="bg-transparent" color="text-white" />
             </div>
 
-            <div className="relative bg-[url('/images/contact.png')] bg-cover bg-center h-[30rem]" data-aos="fade-up">
+            <div className="relative bg-[url('/images/contact.png')] bg-cover bg-center h-[30rem]" >
                 <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-green-300/50 to-[#89C247]"></div>
                 <div className="relative z-10 flex justify-center items-center h-full">
                     <h2 className="text-[40px] sm:text-[60px] lg:text-[90px] font-bold text-white mt-[5%]">
@@ -105,7 +106,7 @@ export default function Page() {
                     </div>
 
                     {/* Right side - Partner Queries */}
-                    <div className="bg-[#8BC34A] rounded-xl p-8 text-white font-semibold w-full lg:w-[30%] mt-10 lg:mt-0 flex flex-col justify-between" data-aos="fade-up">
+                    <div className="bg-[#8BC34A] rounded-xl p-8 lg:py-20 text-white font-semibold w-full lg:w-[30%] mt-10 lg:mt-0 flex flex-col justify-between" data-aos="fade-up">
                         <h3 className="text-[48px] mb-8 leading-tight">
                             FOR <br /> PARTNER <br /> QUERIES
                         </h3>
@@ -139,7 +140,7 @@ export default function Page() {
                 {/* Bottom section */}
                 <div className="mt-16 grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-8" data-aos="fade-up">
                     {/* Left blocks */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4" data-aos="fade-right">
                         <div className="bg-[#8BC34A] rounded-lg p-6 flex items-center justify-center w-full md:w-[301px] h-[241px] mx-auto">
                             <Button color="bg-[#E4032A]" text="Register Now" />
                         </div>
@@ -157,13 +158,15 @@ export default function Page() {
                     </div>
 
                     {/* Map */}
-                    <div>
-                        <img
-                            src="map-placeholder.png"
-                            alt="Map"
-                            className="rounded-lg w-full h-full object-cover"
-                        />
+                    <div className="w-full h-125 pb-[56.25%] relative rounded-lg overflow-hidden" data-aos="fade-left">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27868.579628592186!2d55.15297608273183!3d25.108947700290205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b6b74ef7673%3A0x2904c075ce9b7a45!2sAl%20Sufouh%20-%20Dubai%20Knowledge%20Park%20-%20Dubai%20-%20United%20Arab%20Emirates!5e1!3m2!1sen!2sin!4v1755249986953!5m2!1sen!2sin"
+                            className="absolute top-0 left-0 w-full h-full"
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                        ></iframe>
                     </div>
+
                 </div>
             </section>
 
@@ -173,6 +176,6 @@ export default function Page() {
 
             {/* footer */}
             <Footer />
-        </>
+        </div>
     );
 }
