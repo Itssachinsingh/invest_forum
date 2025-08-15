@@ -1,6 +1,7 @@
 import { Button } from "./Button";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -15,7 +16,7 @@ const Hero = () => {
 
           {/* Bottom line - Right aligned */}
           <div className="flex justify-end space-x-2 sm:space-x-4 mt-[-1rem] sm:mt-[-1.5rem] md:mt-[-2rem]" data-aos="fade-left">
-            <span className="text-black text-[1.5rem] sm:text-[2rem] md:text-[3rem] lg:text-[4rem] relative top-[1.4rem] sm:top-[2rem] md:top-[2.4rem] lg:top-[2.8rem]">
+            <span className="text-black text-[1.5rem] sm:text-[2rem] md:text-[3rem] lg:text-[4rem] relative top-[7px] sm:top-[10px] lg:top-[2.8rem]">
               &
             </span>
             <span className="text-[#109FEB]">BANKING</span>
@@ -28,8 +29,8 @@ const Hero = () => {
         </h3>
 
         <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-6 text-white"  data-aos="fade-up">
-          <Button color="bg-[#E4032A]" text="Register Now" />
-          <Button color="bg-[#109FEB]" text="Become Partner" />
+          <Link href='https://lu.ma/5qyjg5pl'><Button color="bg-[#E4032A]" text="Register Now" /></Link>
+          <Link href='https://tally.so/r/3Xa44e'><Button color="bg-[#109FEB]" text="Become Partner" /></Link>
         </div>
       </div>
     </div>

@@ -27,6 +27,7 @@ const partners1 = [
     "/images/media4.png",
     "/images/media5.png",
     "/images/media6.png",
+    
 ];
 
 export default function Page() {
@@ -39,7 +40,7 @@ export default function Page() {
     }, []);
 
     return (
-        <div className="w-full max-w-[1600px] mx-auto">
+        <div className="w-full max-w-[1600px] mx-auto relative">
             <div className="absolute top-0 left-0 w-full z-[9999]">
                 <Navbar bgColor="bg-transparent" color="text-white" />
             </div>
@@ -153,7 +154,7 @@ export default function Page() {
                         {/* Row 1 - Left to Right */}
                         <div className="overflow-hidden whitespace-nowrap my-16">
                             <div className="animate-marquee-left">
-                                {[...partners1, ...partners1,].map((logo, index) => (
+                                {[...partners1].map((logo, index) => (
                                     <Image
                                         key={index}
                                         src={logo}

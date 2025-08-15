@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 
 const CountdownTimer = () => {
   const [timeLeft, setTimeLeft] = useState({
-    days: 32,
-    hours: 20,
-    minutes: 12,
-    seconds: 11
+    days: 60,
+    hours: 9,
+    minutes: 14,
+    seconds: 2
   });
 
   useEffect(() => {

@@ -9,6 +9,7 @@ import { Button } from "../components/Button";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import AddToCalendarButton from "../components/AddToCalender";
+import Link from "next/link";
 
 const events = [
   {
@@ -17,7 +18,7 @@ const events = [
     title: "INVEST WEB3 FORUM 2025",
     dateText: "OCTOBER 15th, 2025",
     location: "Dubai Knowledge Park",
-    image: "/images/group.png",
+    image: "/images/web3.jpg",
   },
   {
     month: "OCTOBER",
@@ -47,7 +48,7 @@ export default function Page() {
   }, []);
 
   return (
-    <div className="w-full max-w-[1600px] mx-auto">
+    <div className="w-full max-w-[1600px] mx-auto relative">
 
       <div className="absolute top-0 left-0 w-full z-[9999]">
         <Navbar bgColor="bg-transparent" color="text-white" />
@@ -119,7 +120,7 @@ export default function Page() {
                   />
 
 
-                  <Button color="bg-[#E4032A]" text="Register" />
+                  <Link href='https://lu.ma/5qyjg5pl'><Button color="bg-[#E4032A]" text="Register" /></Link> 
                 </div>
               </div>
             </div>

@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import BottomBanner2 from "../components/BottomBanner2";
 import Slider from "../components/Slider";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Page() {
   const speakers = [
@@ -43,7 +44,7 @@ export default function Page() {
   return (
 
 
-    <div className="max-w-[1600px] mx-auto">
+    <div className="w-full max-w-[1600px] mx-auto relative">
 
       <div className="absolute top-0 left-0 w-full z-[9999]">
         <Navbar bgColor="bg-transparent" color="text-white" />
@@ -71,12 +72,13 @@ export default function Page() {
         <p className="text-[16px] sm:text-[18px]">
           Present your ideas to a panel of investors...
         </p>
-        <button
+
+        <Link href='https://tally.so/r/meJarJ'><button
           type="submit"
           className="bg-[#20A04B] transition-all duration-500 ease-in-out hover:bg-gradient-to-r hover:from-[#d4145a] hover:to-[#004e92] text-white px-6 sm:px-7 py-2 sm:py-3 my-4 text-[18px] sm:text-[22px] font-bold rounded-full shadow"
         >
           Book a Pitch Slot
-        </button>
+        </button></Link>
       </div>
 
       {/* Gray Box */}
@@ -105,7 +107,7 @@ export default function Page() {
             WHY PITCH ?
           </h2>
         </div>
-       <div className="px-4 sm:px-10 lg:px-20" data-aos="fade-up">
+        <div className="px-4 sm:px-10 lg:px-20" data-aos="fade-up">
           <div
             className="bg-cover bg-center py-16 h-auto lg:h-[700px]"
             style={{ backgroundImage: 'url(/images/world.png)' }}
@@ -181,8 +183,8 @@ export default function Page() {
                 src="/images/package.png"
                 alt="Ticket 1"
                 loading="lazy"
-                     width={200}   
-                     height={110} 
+                width={200}
+                height={110}
                 className="absolute top-0 left-0 w-full h-auto transform rotate-[-8deg] transition-all duration-500 ease-out 
                    group-hover:rotate-[-15deg] group-hover:-translate-x-12 group-hover:-translate-y-6"
               />
@@ -192,8 +194,8 @@ export default function Page() {
                 src="/images/package.png"
                 alt="Ticket 2"
                 loading="lazy"
-                     width={200}   
-                     height={110} 
+                width={200}
+                height={110}
                 className="absolute top-0 left-0 w-full h-auto transform rotate-[0deg] transition-all duration-500 ease-out
                    group-hover:-translate-y-10"
               />
@@ -203,8 +205,8 @@ export default function Page() {
                 src="/images/package.png"
                 alt="Ticket 3"
                 loading="lazy"
-                     width={200}   
-                     height={110} 
+                width={200}
+                height={110}
                 className="absolute top-0 left-0 w-full h-auto transform rotate-[8deg] transition-all duration-500 ease-out 
                    group-hover:rotate-[15deg] group-hover:translate-x-12 group-hover:-translate-y-6"
               />

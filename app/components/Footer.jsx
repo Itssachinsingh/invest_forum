@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Link from "next/link";
-
+import Image from 'next/image';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faXTwitter,
@@ -15,22 +15,22 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
 const icons = [
-  { icon: faXTwitter, bg: "bg-gray-700" },
-  { icon: faFacebookF, bg: "bg-blue-600" },
-  { icon: faLinkedinIn, bg: "bg-blue-700" },
-  { icon: faTelegramPlane, bg: "bg-sky-500" }
+  { icon: faXTwitter, bg: "bg-gray-700", link: '#' },
+  { icon: faFacebookF, bg: "bg-blue-600", link: '#' },
+  { icon: faLinkedinIn, bg: "bg-blue-700", link: 'https://www.linkedin.com/company/invest-payments-banking-forum/about/?viewAsMember=true' },
+  { icon: faTelegramPlane, bg: "bg-sky-500", link: '#' }
 ];
 
 const Footer = () => {
 
-    useEffect(() => {
-      AOS.init({
-        duration: 800, 
-        easing: 'ease-in-out', 
-        once: false, 
-      });
-    }, []);
-  
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: false,
+    });
+  }, []);
+
   return (
     <>
       {/* Stay Tuned */}
@@ -43,7 +43,7 @@ const Footer = () => {
         "  data-aos="fade-up"
       >
         {/* Left side */}
-        <div className="text-center md:text-left w-full"  data-aos="fade-up">
+        <div className="text-center md:text-left w-full" data-aos="fade-up">
           <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white">
             STAY TUNED
           </h2>
@@ -53,7 +53,7 @@ const Footer = () => {
         </div>
 
         {/* Right side */}
-        <form className="flex flex-col sm:flex-row items-center gap-4  md:w-1/2"  data-aos="fade-up">
+        <form className="flex flex-col sm:flex-row items-center gap-4  md:w-1/2" data-aos="fade-up">
           <input
             type="email"
             placeholder="Enter your email"
@@ -67,15 +67,18 @@ const Footer = () => {
         </form>
       </section>
 
-      <footer className="bg-gray-900 text-white py-12 px-4 sm:px-10 lg:px-35"  data-aos="fade-up">
-        <div className="mx-auto">
+      <footer className=" text-white py-12 px-4 sm:px-10 lg:px-35 bg-[url('/images/footer-bg.jpg')] bg-cover bg-center relative" data-aos="fade-up">
+      <div className='absolute left-0 top-0 bg-black/80 w-full h-full'></div>
+        <div className="mx-auto z-10 relative">
           <div className="grid lg:grid-cols-6 gap-8">
             {/* Logo + Info */}
             <div className="col-span-2">
-              <h3 className="font-bold mb-4 text-2xl lg:text-[33px] w-full lg:w-[45%] leading-tight">
+              {/* <h3 className="font-bold mb-4 text-2xl lg:text-[33px] w-full lg:w-[45%] leading-tight">
                 INVEST PAYMENTS & BANKING <span className="font-light">FORUM</span>
-              </h3>
-              <p className="text-gray-400 text-sm">16 July, 2025 | Dubai</p>
+              </h3> */}
+              <Image src="/images/main-logo.png" width={200} height={200} alt="invest-forum" className='mb-8' />
+              
+              <p className="text-gray-400 text-sm">15 OCTOBER, 2025 | Dubai</p>
             </div>
 
             {/* General */}
@@ -93,10 +96,10 @@ const Footer = () => {
             {/* Be a Part of It */}
             <div>
               <h4 className="font-semibold mb-3 text-lg lg:text-[22px]">BE APART OF IT</h4>
-              <ul className="space-y-2 text-sm lg:text-base leading-snug">
-                <li>BECOME SPEAKER</li>
-                <li>BECOME PARTNER</li>
-                <li>PITCH YOUR STARTUP</li>
+              <ul className="space-y-2 text-sm lg:text-base leading-8">
+                <Link href='https://tally.so/r/mRNDMv'><li>BECOME SPEAKER</li></Link>
+                <Link href='https://tally.so/r/3Xa44e'><li>BECOME PARTNER</li></Link>
+                <Link href='https://tally.so/r/meJarJ'><li>PITCH YOUR STARTUP</li></Link>
                 <li>EXHIBIT</li>
               </ul>
             </div>
@@ -120,10 +123,10 @@ const Footer = () => {
                     key={idx}
                     className="w-8 h-8 p-2 bg-white rounded-full flex justify-center items-center"
                   >
-                    <FontAwesomeIcon
+                    <Link href={item.link}><FontAwesomeIcon
                       icon={item.icon}
                       className="text-black text-[14px]"
-                    />
+                    /></Link>
                   </div>
                 ))}
               </div>
@@ -132,6 +135,16 @@ const Footer = () => {
                 <h4>
                   <span className="text-xl lg:text-[25px] font-bold">Giakaa</span> | Capital
                 </h4>
+                
+              </div>
+                <div className="mt-5">
+                <p className="text-gray-400">Powered By</p>
+                <div className='flex   mt-2'>
+                <Image src='/images/bepay.svg'  width={30} height={30} />
+                <span className='ml-2 '>
+                  bepay money
+                </span> 
+                </div>
               </div>
             </div>
           </div>

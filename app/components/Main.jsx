@@ -7,7 +7,7 @@ import "swiper/css";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Slider from './Slider'
-
+import Link from "next/link";
 import BottomBanner2 from "./BottomBanner2";
 import CountdownTimer from "./CountdownTimer";
 import Footer from "./Footer";
@@ -250,7 +250,7 @@ const MainContent = () => {
             The Invest Payments and Banking Forum brings together key stakeholders from investment, payments, and banking sectors to foster collaboration on emerging trends, regulatory changes, and technological innovations shaping the future of financial services.
             As a premier platform, the forum enables cross-sector engagement and knowledge-sharing, accelerating growth and transformation within the payments and banking landscape.
           </p>
-          <Button color="bg-[#E4032A]" text="About us" />
+          {/* <Button color="bg-[#E4032A]" text="About us" /> */}
         </div>
 
         <div
@@ -309,7 +309,7 @@ const MainContent = () => {
                 The <strong>Invest Payments and Banking Forum </strong> offers a premier stage for startups to present groundbreaking solutions in payments, banking, and financial technology. Focused on the rapidly growing MENA region, this is a unique opportunity to secure strategic partnerships, gain expert mentorship, and expand market presence internationally. </p>
               <p className="mt-4 text-base sm:text-lg md:text-[22px] lg:text-[22px]">Submit your application today and accelerate your journey in shaping the future of digital finance .</p>
               <div className="mt-6">
-                <Button color="bg-green-600" text="Apply for Pitch" />
+                <Link href='https://tally.so/r/meJarJ'><Button color="bg-green-600" text="Apply for Pitch" /></Link>
               </div>
             </div>
           </div>
@@ -332,7 +332,7 @@ const MainContent = () => {
               <p className="text-base sm:text-lg md:text-[20px] lg:text-[20px] mt-8">
                 <strong>Connect, showcase, and grow with top industry leaders. </strong> Gain direct access to key decision-makers, premium visibility, and exclusive networking opportunities at the Invest Payments and Banking Forum. With strong representation from the high-growth MENA region, this is your chance to showcase your brand and solutions to investors, banks, fintech leaders, and regulators. Secure your booth today and position your company at the center of financial transformation
               </p>
-              <Button color="bg-[#109FEB]" text="Book a Booth" />
+              <Link href='https://calendly.com/omika-giakaacapital/invest-payment-and-banking-forum'><Button color="bg-[#109FEB]" text="Book a Booth" /></Link>
             </div>
             <div className="flex flex-col justify-center sm:justify-between gap-4 md:gap-y-4 max-w-full md:max-w-[564px]" data-aos="fade-left">
               <div className="flex gap-4">
@@ -487,16 +487,16 @@ const MainContent = () => {
         </div>
         <div className="px-4 sm:px-10 lg:px-28" data-aos="fade-up">
           <div
-            className="bg-cover bg-center py-16 h-auto lg:h-[700px]"
+            className="bg-cover bg-center py-16 h-auto  lg:h-[900px] 2xl:h-[700px]"
             style={{ backgroundImage: 'url(/images/world.png)' }}
           >
             <div className="mx-auto px-4 sm:px-4">
               {/* First Row: 3 boxes */}
-              <div className="flex flex-wrap justify-center gap-4 sm:gap-8 lg:gap-28 mb-10 lg:mb-28" data-aos="fade-right">
+              <div className="flex flex-wrap  2xl:justify-between  justify-center  gap-6 sm:gap-8  mb-8 lg:mb-8 2xl:mb-28" data-aos="fade-right">
                 {boxesTop.map((box, index) => (
                   <div
                     key={index}
-                    className="w-[280px] sm:w-[300px] lg:w-[360px] h-[180px] sm:h-[200px] lg:h-[220px] text-center rounded-xl backdrop-blur-sm backdrop-brightness-50 bg-black/30 text-white flex flex-col items-center justify-center text-lg sm:text-xl font-semibold"
+                    className="w-[280px] sm:w-[300px] lg:w-[360px] h-[180px] sm:h-[200px] lg:h-[220px] text-center rounded-xl backdrop-blur-sm backdrop-brightness-50 bg-black/30 text-white flex flex-col items-center justify-center text-lg sm:text-xl font-semibold hover:translate-y-2 transition-all  duration-500 ease-in-out"
                   >
                     <h2 className="text-4xl sm:text-5xl lg:text-[80px]">{box.title}</h2>
                     <p className="text-xs sm:text-sm px-4 sm:px-8 lg:px-12">{box.desc}</p>
@@ -509,7 +509,7 @@ const MainContent = () => {
                 {boxesBottom.map((box, index) => (
                   <div
                     key={index}
-                    className="w-[280px] sm:w-[300px] lg:w-[360px] h-[180px] sm:h-[200px] lg:h-[220px] text-center rounded-xl backdrop-blur-sm backdrop-brightness-50 bg-black/30 text-white flex flex-col items-center justify-center text-lg sm:text-xl font-semibold"
+                    className="w-[280px] sm:w-[300px] lg:w-[360px] h-[180px] sm:h-[200px] lg:h-[220px] text-center rounded-xl backdrop-blur-sm backdrop-brightness-50 bg-black/30 text-white flex flex-col items-center justify-center text-lg sm:text-xl font-semibold hover:translate-y-2 transition-all  duration-500 ease-in-out"
                   >
                     <h2 className="text-4xl sm:text-5xl lg:text-[80px]">{box.title}</h2>
                     <p className="text-xs sm:text-sm px-4 sm:px-8 lg:px-12">{box.desc}</p>
@@ -557,7 +557,7 @@ const MainContent = () => {
           </div>
 
           <div className="text-center mt-8">
-            <Button color="bg-[#E4032A]" text="Become Speaker" />
+            <Link href='https://tally.so/r/mRNDMv'><Button color="bg-[#E4032A]" text="Become Speaker" /></Link>
           </div>
         </div>
       </section>
@@ -691,7 +691,7 @@ const MainContent = () => {
               </span>
               Secure Your Spot Today!
             </h2>
-            <Button color="bg-[#E4032A]" text="Register Now" />
+            <Link href='https://lu.ma/5qyjg5pl'><Button color="bg-[#E4032A]" text="Register Now" /></Link>
           </div>
 
           {/* Right side: Countdown */}

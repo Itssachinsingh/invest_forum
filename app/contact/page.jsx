@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -32,7 +33,7 @@ export default function Page() {
 
 
     return (
-        <div className="w-full max-w-[1600px] mx-auto">
+        <div className="w-full max-w-[1600px] mx-auto relative">
 
 
 
@@ -100,7 +101,7 @@ export default function Page() {
 
                             {/* Bottom Center Button */}
                             <div className="text-center">
-                                <Button color="bg-[#109FEB]" text="Become a Partner" />
+                                <Link href='https://tally.so/r/3Xa44e'><Button color="bg-[#109FEB]" text="Become a Partner" /></Link>
                             </div>
                         </form>
                     </div>
@@ -140,17 +141,17 @@ export default function Page() {
                 {/* Bottom section */}
                 <div className="mt-16 grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-8" data-aos="fade-up">
                     {/* Left blocks */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4" data-aos="fade-right">
-                        <div className="bg-[#8BC34A] rounded-lg p-6 flex items-center justify-center w-full md:w-[301px] h-[241px] mx-auto">
-                            <Button color="bg-[#E4032A]" text="Register Now" />
+                    <div className="grid grid-cols-1 xl:grid-cols-2 gap-4" data-aos="fade-right">
+                        <div className="bg-[#8BC34A] rounded-lg p-6 flex items-center justify-center w-full lg:w-[250px]  xl:w-[301px] h-[241px]  mx-auto">
+                             <Link href='https://lu.ma/5qyjg5pl'><Button color="bg-[#E4032A]" text="Register Now" /></Link>
                         </div>
-                        <div className="bg-[#8BC34A] rounded-lg p-6 text-white w-full md:w-[301px] h-[241px] mx-auto" data-aos="fade-up">
+                        <div className="bg-[#8BC34A] rounded-lg p-6 text-white w-full lg:w-[250px] xl:w-[301px] h-[241px] mx-auto" data-aos="fade-up">
                             <div className="text-sm flex gap-3"><FontAwesomeIcon icon={faCalendarDays} className="w-[24px]" /> <p className="text-[24px] font-bold">DATE</p></div>
                             <p className="font-bold text-[20px]">July 16th, 2025</p>
                             <div className="text-sm  mt-4 flex gap-3"> <FontAwesomeIcon icon={faLocationDot} className="w-[24px]" />  <p className="text-[24px] font-bold mt-4">LOCATION</p>  </div>
                             <p className="text-[20px]">Dubai Knowledge Park</p>
                         </div>
-                        <div className="bg-[#8BC34A] rounded-lg p-6 text-white col-span-1 md:col-span-2 w-full md:w-[646px] h-[241px] mx-auto" data-aos="fade-up">
+                        <div className="bg-[#8BC34A] rounded-lg p-6 text-white col-span-1 md:col-span-2 w-full md:w-[520px] xl:w-[646px] h-[241px] mx-auto" data-aos="fade-up">
                             <div className="flex gap-3 px-4"> <FontAwesomeIcon icon={faLocationDot} className="w-[24px]" /><p className="text-[24px] font-bold" > LOCATION</p></div>
                             <p className="mb-1 text-[20px] px-4">Dubai Knowledge Park</p>
                             <Button color="bg-[#063579] px-4" text="View Larger map" />
@@ -158,7 +159,7 @@ export default function Page() {
                     </div>
 
                     {/* Map */}
-                    <div className="w-full h-125 pb-[56.25%] relative rounded-lg overflow-hidden" data-aos="fade-left">
+                    <div className="w-full  h-125 pb-[56.25%] relative rounded-lg overflow-hidden" data-aos="fade-left">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27868.579628592186!2d55.15297608273183!3d25.108947700290205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b6b74ef7673%3A0x2904c075ce9b7a45!2sAl%20Sufouh%20-%20Dubai%20Knowledge%20Park%20-%20Dubai%20-%20United%20Arab%20Emirates!5e1!3m2!1sen!2sin!4v1755249986953!5m2!1sen!2sin"
                             className="absolute top-0 left-0 w-full h-full"

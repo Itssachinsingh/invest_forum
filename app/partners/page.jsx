@@ -13,6 +13,7 @@ import Footer from "../components/Footer";
 import { Button } from "../components/Button";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Link from "next/link";
 
 export default function Page() {
     const partners = [
@@ -144,7 +145,7 @@ export default function Page() {
     }, []);
 
     return (
-        <div className="w-full max-w-[1600px] mx-auto">
+        <div className="w-full max-w-[1600px] mx-auto relative">
         
     <div className="absolute top-0 left-0 w-full z-[9999]">
         <Navbar bgColor="bg-transparent" color="text-white" />
@@ -182,8 +183,8 @@ export default function Page() {
                                 Partner with the Invest Payments and Banking Forum and put your brand front and center in the world of finance and fintech innovation. Connect with industry leaders, regulators, and game-changers, and be part of the conversation that’s shaping the future of payments and banking. Let’s work together to create something impactful!
                             </p>
                             <div className="flex gap-4 sm:gap-8 flex-col sm:flex-row px-4">
-                                <Button color="bg-[#E4032A]" text="Become Partner" />
-                                <Button color="bg-[#20A04B]" text="Schedule a Call" />
+                                <Link href='https://tally.so/r/3Xa44e'><Button color="bg-[#E4032A]" text="Become Partner" /></Link>
+                                <Link href='https://calendly.com/omika-giakaacapital/invest-payment-and-banking-forum'><Button color="bg-[#20A04B]" text="Schedule a Call" /></Link>
                             </div>
                             <p className="font-bold text-[20px]  italic mt-10 mb-8 px-4">Want to get your brand noticed in the payments and banking world? Partner with the Invest Payments and Banking Forum!</p>
                             <form className="flex items-center gap-4 w-full md:w-auto px-4">

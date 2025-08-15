@@ -41,7 +41,7 @@ export default function Page() {
 
 
   return (
-    <div className="w-full max-w-[1600px] mx-auto">
+    <div className="w-full max-w-[1600px] mx-auto relative">
 
       <div className="absolute top-0 left-0 w-full z-[9999]">
         <Navbar bgColor="bg-transparent" color="text-white" />
