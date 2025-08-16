@@ -3,8 +3,15 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+
 const Navbar = ({ bgColor = "bg-white", color = "text-black", className }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  
+  // Determine which logo to use based on current path
+  const isLandingPage = pathname === "/" || pathname === "";
+  const logoSrc = isLandingPage ? "/images/ipbflogo.png" : "/images/main-logo.png";
 
   const navItems = [
     { label: "AGENDA", href: "agenda" },
@@ -12,7 +19,6 @@ const Navbar = ({ bgColor = "bg-white", color = "text-black", className }) => {
     { label: "PARTNER", href: "partners" },
     { label: "STARTUP PITCH", href: "startup" },
     { label: "SIDE EVENTS", href: "side-events" },
-    // { label: "MORE", href: "#more" },
   ];
 
   return (
@@ -23,13 +29,13 @@ const Navbar = ({ bgColor = "bg-white", color = "text-black", className }) => {
         <div className="flex items-center space-x-2">
           <div className="text-sm font-semibold leading-tight">
             <Link href="/">
-              {/* <h3 className="font-bold text-[16px] sm:text-[18px]">
-                INVEST <br /> PAYMENTS <br /> & BANKING{" "}
-                <span className="font-light">
-                  <br /> FORUM
-                </span>
-              </h3> */}
-              <Image src="/images/main-logo.png" width={100} height={100} alt="" />
+              <Image 
+                src={logoSrc} 
+                width={100} 
+                height={100} 
+                alt="Logo" 
+                priority
+              />
             </Link>
           </div>
         </div>
@@ -58,13 +64,16 @@ const Navbar = ({ bgColor = "bg-white", color = "text-black", className }) => {
                 <Link href='/blogs'><li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">MEDIA</li></Link>
               </ul>
             </div>
-          </div>        </div>
+          </div>        
+        </div>
 
         {/* Desktop Button */}
         <div className="hidden lg:block ">
-          <Link href='https://lu.ma/5qyjg5pl'>  <button className="bg-[#E4032A] text-white text-[14px] lg:text-[16px] px-6 lg:px-8 py-2.5 lg:py-3 rounded-4xl duration-500 ease-in-out hover:bg-gradient-to-r hover:from-[#d4145a] hover:to-[#004e92]">
-            Register Now
-          </button></Link>
+          <Link href='https://lu.ma/5qyjg5pl'>  
+            <button className="bg-[#E4032A] text-white text-[14px] lg:text-[16px] px-6 lg:px-8 py-2.5 lg:py-3 rounded-4xl duration-500 ease-in-out hover:bg-gradient-to-r hover:from-[#d4145a] hover:to-[#004e92]">
+              Register Now
+            </button>
+          </Link>
         </div>
 
         {/* Mobile Hamburger / Close */}
@@ -76,7 +85,6 @@ const Navbar = ({ bgColor = "bg-white", color = "text-black", className }) => {
           >
             {isOpen ? "✖" : "☰"}
           </button>
-
         </div>
       </div>
 
@@ -109,15 +117,15 @@ const Navbar = ({ bgColor = "bg-white", color = "text-black", className }) => {
             </Link>
           ))}
 
-
           <Link href='/contact' className="text-base font-medium text-foreground hover:text-primary transition-colors">CONTACT</Link>
           <Link href='/blogs' className="text-base font-medium text-foreground hover:text-primary transition-colors">MEDIA</Link>
 
-
           {/* Mobile Register Button */}
-          <Link href='https://lu.ma/5qyjg5pl'><button className="mt-6 w-full bg-[#E4032A] text-white text-[14px] px-6 py-2.5 rounded-4xl duration-500 ease-in-out hover:bg-gradient-to-r hover:from-[#d4145a] hover:to-[#004e92]">
-            Register Now
-          </button></Link>
+          <Link href='https://lu.ma/5qyjg5pl'>
+            <button className="mt-6 w-full bg-[#E4032A] text-white text-[14px] px-6 py-2.5 rounded-4xl duration-500 ease-in-out hover:bg-gradient-to-r hover:from-[#d4145a] hover:to-[#004e92]">
+              Register Now
+            </button>
+          </Link>
         </div>
       </div>
 
