@@ -13,13 +13,18 @@ import {
 import { Button } from './Button';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
+import { db } from "../../lib/firebase";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+
 const icons = [
   { icon: faXTwitter, bg: "bg-gray-700", link: '#' },
   { icon: faFacebookF, bg: "bg-blue-600", link: '#' },
   { icon: faLinkedinIn, bg: "bg-blue-700", link: 'https://www.linkedin.com/company/invest-payments-banking-forum/about/?viewAsMember=true' },
   { icon: faTelegramPlane, bg: "bg-sky-500", link: '#' }
 ];
+
 
 const Footer = () => {
 
