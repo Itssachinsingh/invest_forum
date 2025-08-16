@@ -14,7 +14,7 @@ import { Button } from "../components/Button";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Link from "next/link";
-import { app } from "../../lib/firebase";
+import { db } from "../../lib/firebase";
 import {
   getFirestore,
   collection,
@@ -145,7 +145,6 @@ export default function Page() {
     { icon: faTelegramPlane, bg: "bg-sky-500" },
   ];
 
-  const db = typeof window !== "undefined" ? getFirestore(app) : null;
 
   const handleDownload = async (e) => {
     e.preventDefault();

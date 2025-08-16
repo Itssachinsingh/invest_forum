@@ -23,6 +23,10 @@ const icons = [
 
 const Footer = () => {
 
+    const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterLoading, setNewsletterLoading] = useState(false);
+
+
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -30,6 +34,25 @@ const Footer = () => {
       once: false,
     });
   }, []);
+
+   const handleNewsletter = async (e) => {
+    e.preventDefault();
+    if (!newsletterEmail) return;
+    setLoading(true);
+    try {
+      if (db) {
+        await addDoc(collection(db, "newsletter_emails"), {
+          email: newsletterEmail,
+          createdAt: serverTimestamp(),
+        });
+      }
+      setNewsletterEmail("");
+      alert("Thank you for subscribing!");
+    } catch (err) {
+      alert("Something went wrong. Please try again.");
+    }
+    setLoading(false);
+  };
 
   return (
     <>
@@ -53,17 +76,20 @@ const Footer = () => {
         </div>
 
         {/* Right side */}
-        <form className="flex flex-col sm:flex-row items-center gap-4  md:w-1/2" data-aos="fade-up">
+        <form className="flex flex-col sm:flex-row items-center gap-4  md:w-1/2" data-aos="fade-up" onSubmit={handleNewsletter}>
           <input
             type="email"
             placeholder="Enter your email"
             className="
               bg-transparent border-b border-white focus:outline-none text-white placeholder-white 
               flex-1 py-2
-              w-full sm:w-[20rem] lg:w-[35rem] /* narrower input for small screens */
+              w-full sm:w-[20rem] lg:w-[35rem]
             "
+            value={newsletterEmail}
+            onChange={(e) => setNewsletterEmail(e.target.value)}
+            required
           />
-          <Button color="bg-red-600" text="Subscribe" />
+          <Button color="bg-red-600" text={loading ? "Subscribing..." : "Subscribe"} disabled={loading} />
         </form>
       </section>
 
