@@ -61,7 +61,7 @@ const Navbar = ({ bgColor = "bg-white", color = "text-black", className }) => {
             <div className="absolute left-0 mt-2 w-40 bg-white text-black shadow-lg rounded-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all">
               <ul>
                 <Link href='/contact'><li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">CONTACT</li></Link>
-                <Link href='/blogs'><li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">MEDIA</li></Link>
+                <Link href='/media'><li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">MEDIA</li></Link>
               </ul>
             </div>
           </div>        
