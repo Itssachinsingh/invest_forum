@@ -118,7 +118,7 @@ const Navbar = ({ bgColor = "bg-white", color = "text-black", className }) => {
           ))}
 
           <Link href='/contact' className="text-base font-medium text-foreground hover:text-primary transition-colors">CONTACT</Link>
-          <Link href='/blogs' className="text-base font-medium text-foreground hover:text-primary transition-colors">MEDIA</Link>
+          <Link href='/media' className="text-base font-medium text-foreground hover:text-primary transition-colors">MEDIA</Link>
 
           {/* Mobile Register Button */}
           <Link href='https://lu.ma/5qyjg5pl'>
