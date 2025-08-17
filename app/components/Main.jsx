@@ -211,7 +211,7 @@ const MainContent = () => {
   }
 
   return (
-    <div className="w-full overflow-x-hidden" data-aos="fade-up">
+    <div className="w-full overflow-hidden" data-aos="fade-up">
 
 
       {/* powered by */}
