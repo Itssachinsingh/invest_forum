@@ -132,13 +132,8 @@ export default function SideEventsPage() {
       </div>
 
       {/* Hero Section */}
-      <div 
-        className="relative bg-gradient-to-br from-purple-900 via-pink-800 to-purple-900 bg-cover bg-center h-[30rem]"
-        style={{
-          backgroundImage: "linear-gradient(135deg, #6F0545 0%, #4A0E4E 50%, #2D1B69 100%)"
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-[#6F0545]/80 to-[#6F0545]/80 opacity-80 z-10"></div>
+      <div className="relative bg-[url('/images/side.jpg')] bg-cover bg-center h-[30rem]" >
+        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-[#6F0545] to-[#6F0545] opacity-80 z-10"></div>
         <div className="relative z-10 flex justify-center items-center h-full">
           <h2 className="text-[40px] sm:text-[60px] lg:text-[90px] font-bold text-white mt-[5%]">
             SIDE EVENTS
