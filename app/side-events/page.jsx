@@ -219,7 +219,7 @@ export default function SideEventsPage() {
         <h4 className="text-center md:text-start text-[#6F0545] font-semibold text-lg md:text-2xl">
           Want to host a side event?
         </h4>
-        <a href="/contact-us/#contact">
+        <a href="/contact">
           <Button 
             color="bg-[#6F0545] hover:bg-[#5A0438]" 
             text="CONTACT US" 
