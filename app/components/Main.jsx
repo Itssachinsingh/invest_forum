@@ -211,11 +211,11 @@ const MainContent = () => {
   }
 
   return (
-    <div className="w-full" data-aos="fade-up">
+    <div className="w-full overflow-x-hidden" data-aos="fade-up">
 
 
       {/* powered by */}
-      <section>
+      <section >
         <div className="mb-8 bg-[#ff6900] text-center mt-10 sm:mt-20 py-4">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl py-4 font-bold text-white">
             POWERED BY
