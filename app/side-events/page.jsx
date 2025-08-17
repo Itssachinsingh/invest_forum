@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import { CalendarDays, MapPin } from "lucide-react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const mainEvent = {
   title: "Invest Web3 Forum 2025, Dubai",
@@ -81,51 +83,8 @@ const createGoogleCalendarLink = (title, location, startDate, endDate) => {
   return `https://calendar.google.com/calendar/render?${params.toString()}`;
 };
 
-const Navbar = ({ bgColor = "bg-transparent", color = "text-white" }) => (
-  <nav className={`${bgColor} ${color} p-4 w-full z-50`}>
-    <div className="max-w-7xl mx-auto flex justify-between items-center">
-      <div className="text-2xl font-bold">INVEST</div>
-      <div className="hidden md:flex space-x-6">
-        <a href="#" className="hover:text-gray-300">Home</a>
-        <a href="#" className="hover:text-gray-300">Events</a>
-        <a href="#" className="hover:text-gray-300">About</a>
-        <a href="#" className="hover:text-gray-300">Contact</a>
-      </div>
-    </div>
-  </nav>
-);
 
-const Footer = () => (
-  <footer className="bg-gray-900 text-white py-12 mt-20">
-    <div className="max-w-7xl mx-auto px-4">
-      <div className="grid md:grid-cols-4 gap-8">
-        <div>
-          <h3 className="text-xl font-bold mb-4">INVEST</h3>
-          <p className="text-gray-400">Leading investment forums and events</p>
-        </div>
-        <div>
-          <h4 className="text-lg font-semibold mb-4">Events</h4>
-          <ul className="text-gray-400 space-y-2">
-            <li>Web3 Forum</li>
-            <li>Digital Assets</li>
-            <li>Bitcoin Conference</li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="text-lg font-semibold mb-4">Contact</h4>
-          <p className="text-gray-400">Dubai Knowledge Park</p>
-        </div>
-        <div>
-          <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
-          <div className="flex space-x-4">
-            <a href="#" className="text-gray-400 hover:text-white">Twitter</a>
-            <a href="#" className="text-gray-400 hover:text-white">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-);
+
 
 const Button = ({ color = "bg-blue-600", text, onClick, href }) => {
   const buttonClass = `${color} text-white px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 transform hover:scale-105`;
