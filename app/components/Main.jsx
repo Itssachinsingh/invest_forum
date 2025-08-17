@@ -303,8 +303,8 @@ const MainContent = () => {
 
 
   {/* Startup Pitch Section */ }
-  <section className="py-16" data-aos="fade-up">
-    <div className="max-w-[1600px] mx-auto ">
+  <section className="py-16 overflow-x-hidden" data-aos="fade-up">
+    <div className="max-w-[1600px] px-3 mx-auto ">
       <div className="mb-8 bg-[#20a04b] text-center ">
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl py-4 font-bold text-white">
           STARTUP PITCH
