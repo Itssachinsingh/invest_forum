@@ -222,8 +222,7 @@ export default function SideEventsPage() {
         </a>
       </div>
 
-      {/* Footer */}
-      <Footer />
+
     </div>
   );
 }

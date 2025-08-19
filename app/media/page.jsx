@@ -108,11 +108,11 @@ export default function Page() {
           Apply for a complimentary Media Pass to join us at Invest Payments &
           Banking Forum, 16th July 2025, at Dubai Knowledge hub.
         </p>
-        <Button
+       <a  target="_blank" rel="noopener noreferrer" href="https://tally.so/r/3Xa44e"> <Button
           color="bg-[#01B2AA]"
           text="Become Media Partner"
           data-aos="fade-bottom"
-        />
+        /></a>
       </div>
 
       {/* stats */}
@@ -429,8 +429,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* footer */}
-      <Footer />
     </div>
   );
 }

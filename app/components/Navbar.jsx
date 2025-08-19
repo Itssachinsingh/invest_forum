@@ -69,11 +69,11 @@ const Navbar = ({ bgColor = "bg-white", color = "text-black", className }) => {
 
         {/* Desktop Button */}
         <div className="hidden lg:block ">
-          <Link href='https://lu.ma/5qyjg5pl'>  
+          <a  target="_blank" rel="noopener noreferrer" href='https://lu.ma/5qyjg5pl'>  
             <button className="bg-[#E4032A] text-white text-[14px] lg:text-[16px] px-6 lg:px-8 py-2.5 lg:py-3 rounded-4xl duration-500 ease-in-out hover:bg-gradient-to-r hover:from-[#d4145a] hover:to-[#004e92]">
               Register Now
             </button>
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Hamburger / Close */}
@@ -121,11 +121,11 @@ const Navbar = ({ bgColor = "bg-white", color = "text-black", className }) => {
           <Link href='/media' className="text-base font-medium text-foreground hover:text-primary transition-colors">MEDIA</Link>
 
           {/* Mobile Register Button */}
-          <Link href='https://lu.ma/5qyjg5pl'>
+          <a  target="_blank" rel="noopener noreferrer" href='https://lu.ma/5qyjg5pl'>
             <button className="mt-6 w-full bg-[#E4032A] text-white text-[14px] px-6 py-2.5 rounded-4xl duration-500 ease-in-out hover:bg-gradient-to-r hover:from-[#d4145a] hover:to-[#004e92]">
               Register Now
             </button>
-          </Link>
+          </a>
         </div>
       </div>
 

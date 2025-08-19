@@ -70,10 +70,10 @@ const Footer = () => {
           mx-4 sm:mx-10 md:mx-10 
           my-12
         "
-        data-aos="fade-up"
+   
       >
         {/* Left side */}
-        <div className="text-center md:text-left w-full" data-aos="fade-up">
+        <div className="text-center md:text-left w-full" >
           <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white">
             STAY TUNED
           </h2>
@@ -85,7 +85,7 @@ const Footer = () => {
         {/* Right side */}
         <form
           className="flex flex-col sm:flex-row items-center gap-4  md:w-1/2"
-          data-aos="fade-up"
+          
           onSubmit={handleNewsletter}
         >
           <input
@@ -110,25 +110,23 @@ const Footer = () => {
 
       <footer
         className=" text-white py-12 px-4 sm:px-10 lg:px-35 bg-[url('/images/footer-bg.jpg')] bg-cover bg-center relative"
-        data-aos="fade-up"
+      
       >
         <div className="absolute left-0 top-0 bg-black/80 w-full h-full"></div>
         <div className="mx-auto z-10 relative">
           <div className="grid lg:grid-cols-6 gap-8">
             {/* Logo + Info */}
             <div className="col-span-2">
-              {/* <h3 className="font-bold mb-4 text-2xl lg:text-[33px] w-full lg:w-[45%] leading-tight">
-                INVEST PAYMENTS & BANKING <span className="font-light">FORUM</span>
-              </h3> */}
+
               <Image
                 src="/images/main-logo.png"
-                width={200}
+                width={280}
                 height={200}
                 alt="invest-forum"
                 className="mb-8"
               />
 
-              <p className="text-gray-400 text-sm">15 OCTOBER, 2025 | Dubai</p>
+              <p className="text-gray-400 text-sm">October 15, 2025 | Dubai Knowledge Park</p>
             </div>
 
             {/* General */}
@@ -153,10 +151,10 @@ const Footer = () => {
                   {" "}
                   <Link href="/media">MEDIA</Link>
                 </li>
-                <li>
+                {/* <li>
                   {" "}
                   <Link href="/exhibit">EXHIBIT</Link>
-                </li>
+                </li> */}
               </ul>
             </div>
 
@@ -166,16 +164,19 @@ const Footer = () => {
                 BE APART OF IT
               </h4>
               <ul className="space-y-2 text-sm lg:text-base leading-8">
-                <Link href="https://tally.so/r/mRNDMv">
+                <a target="_blank"
+                  rel="noopener noreferrer" href="https://tally.so/r/mRNDMv">
                   <li>BECOME SPEAKER</li>
-                </Link>
-                <Link href="https://tally.so/r/3Xa44e">
+                </a>
+                <a target="_blank"
+                  rel="noopener noreferrer" href="https://tally.so/r/3Xa44e">
                   <li>BECOME PARTNER</li>
-                </Link>
-                <Link href="https://tally.so/r/meJarJ">
+                </a>
+                <a target="_blank"
+                  rel="noopener noreferrer" href="https://tally.so/r/meJarJ">
                   <li>PITCH YOUR STARTUP</li>
-                </Link>
-                <li>EXHIBIT</li>
+                </a>
+                {/* <li>EXHIBIT</li> */}
               </ul>
             </div>
 
@@ -202,30 +203,30 @@ const Footer = () => {
                     key={idx}
                     className="w-8 h-8 p-2 bg-white rounded-full flex justify-center items-center"
                   >
-                    <Link href={item.link}>
+                    <a  target="_blank" rel="noopener noreferrer" href={item.link}>
                       <FontAwesomeIcon
                         icon={item.icon}
                         className="text-black text-[14px]"
                       />
-                    </Link>
+                    </a>
                   </div>
                 ))}
               </div>
               <div className="mt-10 lg:mt-16">
                 <p className="text-gray-400">Organised By</p>
-                <h4>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.giakaacapital.com/"><h4>
                   <span className="text-xl lg:text-[25px] font-bold">
                     Giakaa
                   </span>{" "}
                   | Capital
-                </h4>
+                </h4></a>
               </div>
               <div className="mt-5">
                 <p className="text-gray-400">Powered By</p>
-                <div className="flex   mt-2">
-                  <Image src="/images/bepay.svg" width={30} height={30} />
+               <a target="_blank" rel="noopener noreferrer" href="https://bepay.money/"><div className="flex   mt-2">
+                  <Image src="/images/bepay.svg" width={30} height={30} alt='bepay'/>
                   <span className="ml-2 ">bepay money</span>
-                </div>
+                </div></a> 
               </div>
             </div>
           </div>
@@ -236,7 +237,7 @@ const Footer = () => {
               &copy; 2025 Invest Payments & Banking Forum. All rights reserved.
             </p>
             <div className="flex gap-4">
-              <p>TIME & CONDITIONS</p>
+              <p>TERMS & CONDITIONS</p>
               <p>PRIVACY POLICY</p>
             </div>
           </div>

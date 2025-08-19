@@ -29,8 +29,8 @@ const Hero = () => {
         </h3>
 
         <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-6 text-white"  data-aos="fade-up">
-          <Link href='https://lu.ma/5qyjg5pl'><Button color="bg-[#E4032A]" text="Register Now" /></Link>
-          <Link href='https://tally.so/r/3Xa44e'><Button color="bg-[#109FEB]" text="Become Partner" /></Link>
+          <a  target="_blank" rel="noopener noreferrer" href='https://lu.ma/5qyjg5pl'><Button color="bg-[#E4032A]" text="Register Now" /></a>
+          <Link href='/partners'><Button color="bg-[#109FEB]" text="Become Partner" /></Link>
         </div>
       </div>
     </div>

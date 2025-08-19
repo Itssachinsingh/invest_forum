@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -98,12 +97,12 @@ export default function Page() {
                                     <Button color="bg-[#E4032A]" text="Submit" />
                                 </div>
                             </div>
-
+     </form>
                             {/* Bottom Center Button */}
-                            <div className="text-center">
-                                <Link href='https://tally.so/r/3Xa44e'><Button color="bg-[#109FEB]" text="Become a Partner" /></Link>
+                            <div className="text-center mt-6">
+                                <a  target="_blank" rel="noopener noreferrer" href='https://tally.so/r/3Xa44e'><Button color="bg-[#109FEB]" text="Become a Partner" /></a>
                             </div>
-                        </form>
+                   
                     </div>
 
                     {/* Right side - Partner Queries */}
@@ -143,7 +142,7 @@ export default function Page() {
                     {/* Left blocks */}
                     <div className="grid grid-cols-1 xl:grid-cols-2 gap-4" data-aos="fade-right">
                         <div className="bg-[#8BC34A] rounded-lg p-6 flex items-center justify-center w-full lg:w-[250px]  xl:w-[301px] h-[241px]  mx-auto">
-                             <Link href='https://lu.ma/5qyjg5pl'><Button color="bg-[#E4032A]" text="Register Now" /></Link>
+                             <a  target="_blank" rel="noopener noreferrer" href='https://lu.ma/5qyjg5pl'><Button color="bg-[#E4032A]" text="Register Now" /></a>
                         </div>
                         <div className="bg-[#8BC34A] rounded-lg p-6 text-white w-full lg:w-[250px] xl:w-[301px] h-[241px] mx-auto" data-aos="fade-up">
                             <div className="text-sm flex gap-3"><FontAwesomeIcon icon={faCalendarDays} className="w-[24px]" /> <p className="text-[24px] font-bold">DATE</p></div>
@@ -154,7 +153,7 @@ export default function Page() {
                         <div className="bg-[#8BC34A] rounded-lg p-6 text-white col-span-1 md:col-span-2 w-full md:w-[520px] xl:w-[646px] h-[241px] mx-auto" data-aos="fade-up">
                             <div className="flex gap-3 px-4"> <FontAwesomeIcon icon={faLocationDot} className="w-[24px]" /><p className="text-[24px] font-bold" > LOCATION</p></div>
                             <p className="mb-1 text-[20px] px-4">Dubai Knowledge Park</p>
-                            <Button color="bg-[#063579] px-4" text="View Larger map" />
+                           <a   target="_blank" rel="noopener noreferrer" href="https://maps.app.goo.gl/oopTTLbPUAgChRj48"><Button color="bg-[#063579] px-4" text="View Larger map" /></a> 
                         </div>
                     </div>
 
@@ -175,8 +174,7 @@ export default function Page() {
 
 
 
-            {/* footer */}
-            <Footer />
+   
         </div>
     );
 }
