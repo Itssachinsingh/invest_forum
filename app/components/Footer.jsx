@@ -15,9 +15,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
 
-import { db } from "../../lib/firebase";
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-
 const icons = [
   { icon: faXTwitter, bg: "bg-gray-700", link: "#" },
   { icon: faFacebookF, bg: "bg-blue-600", link: "#" },
@@ -31,7 +28,6 @@ const icons = [
 
 const Footer = () => {
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     AOS.init({
@@ -41,23 +37,11 @@ const Footer = () => {
     });
   }, []);
 
-  const handleNewsletter = async (e) => {
+  const handleNewsletter = (e) => {
     e.preventDefault();
     if (!newsletterEmail) return;
-    setLoading(true);
-    try {
-      if (db) {
-        await addDoc(collection(db, "newsletter_emails"), {
-          email: newsletterEmail,
-          createdAt: serverTimestamp(),
-        });
-      }
-      setNewsletterEmail("");
-      alert("Thank you for subscribing!");
-    } catch (err) {
-      alert("Something went wrong. Please try again.");
-    }
-    setLoading(false);
+    setNewsletterEmail("");
+    alert("Thank you for subscribing!");
   };
 
   return (
@@ -102,8 +86,7 @@ const Footer = () => {
           />
           <Button
             color="bg-red-600"
-            text={loading ? "Subscribing..." : "Subscribe"}
-            disabled={loading}
+            text="Subscribe"
           />
         </form>
       </section>

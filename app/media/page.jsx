@@ -14,9 +14,6 @@ import {
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import { db } from "../../lib/firebase";
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-
 const partners1 = [
   "/images/media1.png",
   "/images/media2.png",
@@ -49,37 +46,24 @@ export default function Page() {
     telegram: "",
     country: "",
   });
-  const [loading, setLoading] = useState(false);
 
   // Handle input changes
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
-    try {
-      if (db) {
-        await addDoc(collection(db, "media_applications"), {
-          ...form,
-          createdAt: serverTimestamp(),
-        });
-      }
-      setForm({
-        fullName: "",
-        designation: "",
-        organisation: "",
-        email: "",
-        contact: "",
-        telegram: "",
-        country: "",
-      });
-      alert("Application submitted successfully!");
-    } catch (err) {
-      alert("Something went wrong. Please try again.");
-    }
-    setLoading(false);
+    setForm({
+      fullName: "",
+      designation: "",
+      organisation: "",
+      email: "",
+      contact: "",
+      telegram: "",
+      country: "",
+    });
+    alert("Application submitted successfully!");
   };
 
   return (
@@ -404,8 +388,7 @@ export default function Page() {
                 <div className="mt-[-2rem] md:mt-0">
                   <Button
                     color="bg-[#E4032A]"
-                    text={loading ? "Submitting..." : "Submit Application"}
-                    disabled={loading}
+                    text="Submit Application"
                   />
                 </div>
               </div>

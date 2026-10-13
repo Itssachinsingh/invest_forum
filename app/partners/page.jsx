@@ -14,20 +14,12 @@ import { Button } from "../components/Button";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Link from "next/link";
-import { db } from "../../lib/firebase";
-import {
-  getFirestore,
-  collection,
-  addDoc,
-  serverTimestamp,
-} from "firebase/firestore";
 import Investors from "../components/Investors";
 import PastPartners from "../components/Partners";
 
 export default function Page() {  
 
   const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState(false);
 
   const icons = [
     { icon: faXTwitter, bg: "bg-gray-700" },
@@ -37,26 +29,14 @@ export default function Page() {
   ];
 
 
-  const handleDownload = async (e) => {
+  const handleDownload = (e) => {
     e.preventDefault();
     if (!email) return;
-    setLoading(true);
-    try {
-      if (db) {
-        await addDoc(collection(db, "deck_download_emails"), {
-          email,
-          createdAt: serverTimestamp(),
-        });
-      }
-      setEmail("");
-      window.open(
-        "https://drive.google.com/file/d/1HR6RLw5DTdVX4AJahsma2q233v_aWezH/view?usp=sharing",
-        "_blank"
-      );
-    } catch (err) {
-      alert("Something went wrong. Please try again.");
-    }
-    setLoading(false);
+    setEmail("");
+    window.open(
+      "https://drive.google.com/file/d/1HR6RLw5DTdVX4AJahsma2q233v_aWezH/view?usp=sharing",
+      "_blank"
+    );
   };
   useEffect(() => {
     AOS.init({
@@ -154,8 +134,7 @@ export default function Page() {
                 />
                 <Button
                   color="bg-[#109FEB]"
-                  text={loading ? "Processing..." : "Download Brochure"}
-                  disabled={loading}
+                  text="Download Brochure"
                 />
               </form>
             </div>
